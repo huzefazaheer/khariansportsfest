@@ -1,0 +1,12 @@
+{
+  "name": "khariansportsfest",
+  "version": "1.0.0",
+  "description": "Website for the event kharian sports fest.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "huzefa",
+  "license": "MIT"
+}

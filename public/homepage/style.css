@@ -149,6 +149,33 @@ nav li a:hover {
   column-gap: 6vw;
 }
 
+.location-sec {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-sec img {
+  width: 500px;
+  height: 500px;
+  margin-top: 4vh;
+}
+
+#address {
+  margin-right: 8vw;
+  margin-top: 2vh;
+  font-family: Futura, sans-serif;
+}
+
+h1 {
+  font-family: Futura-MD;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 6vh;
+}
+
 @media screen and (max-width: 600px) {
   nav {
     display: block;

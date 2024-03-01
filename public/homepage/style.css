@@ -60,7 +60,7 @@
 
 .button-light {
   background-color: var(--color-primary);
-  color: var(--color-secondary);
+  color: var(--color-accent);
   border: 1px solid var(--color-primary);
   padding: 1rem;
   font-family: Futura-MD;
@@ -272,6 +272,9 @@ h1 {
   align-items: center;
   height: 400px;
   width: 50%;
+}
+
+.date {
   letter-spacing: 3px;
 }
 

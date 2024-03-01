@@ -337,7 +337,7 @@ h3 {
   }
 
   .menu {
-    display: none;
+     display: none;
   }
   .menu.active,
   .toggle {

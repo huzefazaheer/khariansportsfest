@@ -55,6 +55,7 @@
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 .button-light {
@@ -64,6 +65,7 @@
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 .button-alternative {
@@ -73,6 +75,7 @@
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 a,
@@ -277,7 +280,7 @@ h1 {
   font-size: 1.5rem;
 }
 
-.calltoaction-sec button {
+.calltoaction-sec a {
   width: 40vw;
   margin-top: auto;
   margin-bottom: 5vh;

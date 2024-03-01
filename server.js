@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  res.send("Register!");
+  res.sendFile(path.join(__dirname, "public/registerpage/index.html"));
 });
 
 app.listen(port, () => {

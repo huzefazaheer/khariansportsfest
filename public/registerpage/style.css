@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap");
+
+@font-face {
+  font-family: Futura;
+  src: url("../resources/fonts/futura/Futura\ Book\ font.ttf");
+}
+
+@font-face {
+  font-family: Futura-MD;
+  src: url("../resources/fonts/futura/futura\ medium\ bt.ttf");
+}
+
+@font-face {
+  font-family: Futura-LT;
+  src: url("../resources/fonts/futura/futura\ light\ bt.ttf");
+}
+
+:root {
+  --color-primary: #fff6e9;
+  --color-secondary: #101411;
+  --color-accent: #1b3d2f;
+  --color-background: #fffaf1;
+}
+
+.cinzel {
+  font-family: "Cinzel Decorative", serif;
+}
+
+.futura {
+  font-family: "Futura", serif;
+}
+
+.futura-lt {
+  font-family: "Futura-LT", serif;
+  letter-spacing: 2px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.button-dark {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: 1px solid var(--color-accent);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+.button-light {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+.button-alternative {
+  background-color: #ffffff00;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+nav {
+  background-color: var(--color-primary);
+  padding: 5px 2rem;
+  display: flex;
+  align-items: center;
+  min-height: 9.6vh;
+  border-bottom: 1px solid var(--color-secondary);
+}
+nav a {
+  color: var(--color-secondary);
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  width: 68px;
+  margin-right: 10px;
+  height: 68px;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  padding: 20px 20px;
+  font-size: 1rem;
+}
+
+.toggle {
+  font-size: 2rem;
+  display: none;
+}

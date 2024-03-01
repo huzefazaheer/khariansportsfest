@@ -85,9 +85,9 @@ nav li a:hover {
 }
 
 .logo img {
-  width: 68px;
+  width: 4.25rem;
+  height: 4.25rem;
   margin-right: 10px;
-  height: 68px;
 }
 
 .logo {
@@ -112,7 +112,7 @@ nav li a:hover {
 }
 
 .toggle {
-  font-size: 30px;
+  font-size: 1rem;
   display: none;
 }
 
@@ -172,9 +172,14 @@ nav li a:hover {
     margin-right: 0rem;
   }
 
+  .hero-text {
+    font-size: 3rem;
+  }
+
   .hero-subtext {
     width: 80vw;
     margin-top: 8vh;
+    font-size: 1.5rem;
   }
 
   .hero-buttons {
@@ -212,6 +217,24 @@ h1 {
   font-size: 4rem;
   text-align: center;
   margin-top: 6vh;
+}
+
+/* Location for mobile screens */
+@media screen and (max-width: 600px) {
+  .location-sec img {
+    width: 80%;
+    height: 80%;
+    margin-top: 4vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #address {
+    text-align: center;
+    margin-left: 8vw;
+  }
 }
 
 .calltoaction-sec {

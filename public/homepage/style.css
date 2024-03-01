@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap");
+
+@font-face {
+  font-family: Futura;
+  src: url("../resources/fonts/futura/Futura\ Book\ font.ttf");
+}
+
+@font-face {
+  font-family: Futura-MD;
+  src: url("../resources/fonts/futura/futura\ medium\ bt.ttf");
+}
+
+:root {
+  --color-primary: #fff6e9;
+  --color-secondary: #101411;
+  --color-accent: #1b3d2f;
+  --color-background: #fffaf1;
+}
+
+.cinzel {
+  font-family: "Cinzel Decorative", serif;
+}
+
+.futura {
+  font-family: "Futura", serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.button-dark {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: 1px solid var(--color-accent);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+.button-light {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-primary);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+.button-alternative {
+  background-color: #ffffff00;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  padding: 1rem;
+  font-family: Futura-MD;
+  font-size: 1rem;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+nav {
+  background-color: var(--color-primary);
+  padding: 5px 2rem;
+  display: flex;
+  align-items: center;
+  height: 9.6vh;
+  border-bottom: 1px solid var(--color-secondary);
+}
+nav a {
+  color: var(--color-secondary);
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.logo img {
+  width: 68px;
+  margin-right: 10px;
+  height: 68px;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.menu li {
+  padding: 20px 20px;
+  font-size: 0.8rem;
+}
+
+.toggle {
+  font-size: 30px;
+  display: none;
+}
+
+.hero-sec {
+  background-color: var(--color-background);
+  padding: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img img {
+  margin-right: 2rem;
+  width: 270px;
+  height: 270px;
+}
+
+.hero-text {
+  font-family: cinzel, sans-serif;
+  font-size: 4rem;
+}
+
+.hero-subtext {
+  font-family: Futura, sans-serif;
+  font-size: 2rem;
+  margin-top: 12vh;
+  text-align: center;
+  padding: 0rem 2rem;
+}
+
+.hero-buttons {
+  margin-top: 18vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 19rem 19rem;
+  column-gap: 6vw;
+}
+
+.location-sec {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-sec img {
+  width: 500px;
+  height: 500px;
+  margin-top: 4vh;
+}
+
+#address {
+  margin-right: 8vw;
+  margin-top: 2vh;
+  font-family: Futura, sans-serif;
+  padding-bottom: 10vh;
+}
+
+h1 {
+  font-family: Futura-MD;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 6vh;
+}
+
+.calltoaction-sec {
+  background-color: var(--color-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.calltoaction-sec img {
+  width: 50%;
+  height: 400px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+}
+
+.calltoaction-sec button {
+  width: 40vw;
+}
+
+footer {
+  background-color: var(--color-primary);
+  height: 3rem;
+  color: var(--color-secondary);
+  font-family: Futura;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+  }
+
+  .menu {
+    margin-top: 15px;
+    display: none;
+  }
+  .menu.active,
+  .toggle {
+    display: block;
+  }
+  .toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}

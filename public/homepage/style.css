@@ -11,6 +11,11 @@
   src: url("../resources/fonts/futura/futura\ medium\ bt.ttf");
 }
 
+@font-face {
+  font-family: Futura-LT;
+  src: url("../resources/fonts/futura/futura\ light\ bt.ttf");
+}
+
 :root {
   --color-primary: #fff6e9;
   --color-secondary: #101411;
@@ -24,6 +29,11 @@
 
 .futura {
   font-family: "Futura", serif;
+}
+
+.futura-lt {
+  font-family: "Futura-LT", serif;
+  letter-spacing: 2px;
 }
 
 .bold {
@@ -75,7 +85,7 @@ nav {
   padding: 5px 2rem;
   display: flex;
   align-items: center;
-  height: 9.6vh;
+  min-height: 9.6vh;
   border-bottom: 1px solid var(--color-secondary);
 }
 nav a {
@@ -114,7 +124,7 @@ nav li a:hover {
 }
 
 .toggle {
-  font-size: 30px;
+  font-size: 2rem;
   display: none;
 }
 
@@ -141,6 +151,7 @@ nav li a:hover {
 
 .hero-text {
   font-family: cinzel, sans-serif;
+  letter-spacing: 2px;
   font-size: 4rem;
 }
 
@@ -158,6 +169,39 @@ nav li a:hover {
   grid-template-rows: 1fr;
   grid-template-columns: 19rem 19rem;
   column-gap: 6vw;
+}
+
+/* Hero for mobile screens */
+@media screen and (max-width: 600px) {
+  .hero-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin-right: 0rem;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+  }
+
+  .hero-subtext {
+    width: 80vw;
+    margin-top: 8vh;
+    font-size: rem;
+  }
+
+  .hero-buttons {
+    margin-top: 12vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 19rem;
+    row-gap: 4vh;
+  }
 }
 
 .location-sec {
@@ -188,11 +232,29 @@ h1 {
   margin-top: 6vh;
 }
 
+/* Location for mobile screens */
+@media screen and (max-width: 600px) {
+  .location-sec img {
+    width: 80%;
+    height: 80%;
+    margin-top: 4vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #address {
+    text-align: center;
+    margin-left: 8vw;
+  }
+}
+
 .calltoaction-sec {
   background-color: var(--color-accent);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   color: var(--color-primary);
 }
 
@@ -204,14 +266,55 @@ h1 {
 .left {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  height: 400px;
   width: 50%;
+  letter-spacing: 3px;
+}
+
+.left .futura {
+  font-size: 1.5rem;
 }
 
 .calltoaction-sec button {
   width: 40vw;
+  margin-top: auto;
+  margin-bottom: 5vh;
+}
+
+h3 {
+  font-size: 6rem;
+  margin-top: 8vh;
+}
+
+/* CalltoAction for mobile screens */
+@media screen and (max-width: 600px) {
+  .calltoaction-sec {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .calltoaction-sec img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .calltoaction-sec button {
+    width: 60vw;
+    margin-bottom: 4vh;
+  }
+
+  .left {
+    text-align: center;
+    height: 200px;
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-top: 2vh;
+  }
 }
 
 .footerhuz {
@@ -225,6 +328,7 @@ h1 {
   border-top: 2px solid black;
 }
 
+/* Navbar toggle for mobile screens */
 @media screen and (max-width: 600px) {
   nav {
     display: block;
@@ -233,12 +337,12 @@ h1 {
   }
 
   .menu {
-    margin-top: 15px;
     display: none;
   }
   .menu.active,
   .toggle {
     display: block;
+    margin-top: 12px;
   }
   .toggle {
     position: absolute;

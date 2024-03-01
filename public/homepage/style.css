@@ -212,6 +212,16 @@ h1 {
   width: 40vw;
 }
 
+footer {
+  background-color: var(--color-primary);
+  height: 3rem;
+  color: var(--color-secondary);
+  font-family: Futura;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 600px) {
   nav {
     display: block;

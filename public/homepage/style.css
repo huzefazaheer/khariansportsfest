@@ -158,6 +158,34 @@ nav li a:hover {
   column-gap: 6vw;
 }
 
+/* Hero for mobile screens */
+@media screen and (max-width: 600px) {
+  .hero-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin-right: 0rem;
+  }
+
+  .hero-subtext {
+    width: 80vw;
+    margin-top: 8vh;
+  }
+
+  .hero-buttons {
+    margin-top: 12vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 19rem;
+    row-gap: 4vh;
+  }
+}
+
 .location-sec {
   background-color: var(--color-primary);
   display: flex;
@@ -222,6 +250,7 @@ footer {
   justify-content: center;
 }
 
+/* Navbar toggle for mobile screens */
 @media screen and (max-width: 600px) {
   nav {
     display: block;

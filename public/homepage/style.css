@@ -73,7 +73,7 @@ nav {
   padding: 5px 2rem;
   display: flex;
   align-items: center;
-  height: 9.6vh;
+  min-height: 9.6vh;
   border-bottom: 1px solid var(--color-secondary);
 }
 nav a {
@@ -303,12 +303,12 @@ footer {
   }
 
   .menu {
-    margin-top: 15px;
     display: none;
   }
   .menu.active,
   .toggle {
     display: block;
+    margin-top: 12px;
   }
   .toggle {
     position: absolute;

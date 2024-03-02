@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "site": "khariansportsfest",
+
+    "public": "public",
+
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "./home/index.html",
+        "type": 301
+      },
+      {
+        "source": "/register",
+        "destination": "./register/index.html",
+        "type": 301
+      }
+    ]
+  }
+}

@@ -440,10 +440,9 @@ footer img {
   }
 
   .footer-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    column-gap: 4vw;
+    display: flex;
+    column-gap: 14vw;
+    justify-content: center;
     margin-right: 0;
     margin-left: 0;
     margin-top: 6vh;

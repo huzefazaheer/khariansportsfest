@@ -306,7 +306,7 @@ h3 {
   }
 
   .calltoaction-sec a {
-    width: 60vw;
+    width: 80vw;
     margin-bottom: 4vh;
   }
 
@@ -440,13 +440,16 @@ footer img {
   }
 
   .footer-right {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    margin-top: 8vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 4vw;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 6vh;
   }
 
   .footer-right > * {
-    margin-left: 4vw;
+    margin-left: 0;
   }
 }

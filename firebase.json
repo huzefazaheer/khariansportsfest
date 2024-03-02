@@ -7,12 +7,7 @@
     "redirects": [
       {
         "source": "/",
-        "destination": "./home/index.html",
-        "type": 301
-      },
-      {
-        "source": "/register",
-        "destination": "./register/index.html",
+        "destination": "./home",
         "type": 301
       }
     ]

@@ -33,5 +33,82 @@
         <li><a href="#" class="futura">Contact Us</a></li>
       </ul>
     </nav>
+
+    <div class="formcontainer">
+      <div><h1>Register</h1></div>
+      <form
+        method="post"
+        action="https://script.google.com/macros/s/AKfycbzq3ijSrPnLDrGfxil897bGdcA3U3VgGk1E2vxm3e7Rn0z3v7_7LKV95qAYS_koQgM6/exec"
+      >
+        <div class="forminput">
+          <label for="name">Full Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="forminput">
+          <label for="age">Age</label>
+          <input type="number" name="age" id="age" />
+        </div>
+        <div class="forminput">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="forminput">
+          <label for="cnic">CNIC Number</label>
+          <input
+            type="tel"
+            pattern="(\d{5}-)(\d{7}-)(\d{1})"
+            placeholder="XXXXX-XXXXXXX-X"
+            name="cnic"
+            id="cnic"
+          />
+        </div>
+        <div class="forminput">
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" />
+        </div>
+        <input class="button-dark" type="submit" value="Continue To Payment" />
+      </form>
+    </div>
+
+    <footer class="footer-long">
+      <div id="footer-icon" class="footer-content">
+        <img src="../resources/logodark.png" alt="" />
+        <p>Kharian Sports Festival</p>
+
+        <div class="icons">
+          <a class="red" href="#"
+            ><ion-icon name="logo-instagram"></ion-icon
+          ></a>
+          <a class="gold" href="#"><ion-icon name="mail-outline"></ion-icon></a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-content">
+          <ul>
+            <li><h4>Navigate</h4></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">The Games</a></li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <ul>
+            <li><h4>The Team</h4></li>
+            <li><a href="#">Director</a></li>
+            <li><a href="#">Asst. Director</a></li>
+            <li><a href="#">Event Head</a></li>
+          </ul>
+        </div>
+        <div class="footer-content">
+          <ul>
+            <li><h4>Contact Us</h4></li>
+            <li><a href="#">Contact Staff</a></li>
+            <li><a href="#">Investor Relations</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer-short"><p>© Kharian Sports Fest 2024</p></footer>
   </body>
 </html>

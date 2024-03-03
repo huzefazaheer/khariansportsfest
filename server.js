@@ -3,15 +3,16 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-app.use(express.static("public/homepage"));
+app.use(express.static("public/home"));
+app.use(express.static("public/register"));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/homepage/index.html"));
+  res.sendFile(path.join(__dirname, "public/home/index.html"));
 });
 
 app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/registerpage/index.html"));
+  res.sendFile(path.join(__dirname, "public/register/index.html"));
 });
 
 app.listen(port, () => {

@@ -213,8 +213,12 @@ input[type="submit"] {
 
 /* Form for mobile screens */
 @media (max-width: 600px) {
+  form {
+    padding-top: 0;
+  }
+
   .formcontainer {
-    margin-top: 4vh;
+    padding-top: 4vh;
   }
 
   .forminput {
@@ -230,6 +234,10 @@ input[type="submit"] {
   input[type="submit"] {
     padding-left: 25vw;
     padding-right: 25vw;
+  }
+
+  h1 {
+    text-align: center;
   }
 }
 

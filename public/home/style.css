@@ -176,6 +176,10 @@ nav li a:hover {
 
 /* Hero for mobile screens */
 @media screen and (max-width: 600px) {
+  .hero-sec {
+    padding: 8vh;
+  }
+
   .hero-img {
     display: flex;
     flex-direction: column;
@@ -194,11 +198,11 @@ nav li a:hover {
 
   .hero-subtext {
     width: 100vw;
-    margin-top: 8vh;
+    margin-top: 6vh;
   }
 
   .hero-buttons {
-    margin-top: 12vh;
+    margin-top: 8vh;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 19rem;
@@ -314,6 +318,14 @@ h3 {
     text-align: center;
     height: 200px;
     width: 100%;
+  }
+
+  .left .futura {
+    font-size: 1.2rem;
+  }
+
+  .date {
+    display: block;
   }
 
   h3 {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kharian Sports Festival</title>
+    <title>Kharian Sports Fest</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="index.js" defer></script>
     <link
@@ -33,38 +33,24 @@
         <li><a href="/contact" class="futura">Contact Us</a></li>
       </ul>
     </nav>
-    <div class="hero-sec">
-      <div class="hero-img">
-        <img src="../resources/logo.png" alt="" />
-        <p class="hero-text">
-          Kharian<br />
-          Sports Fest
-        </p>
-      </div>
-      <p class="hero-subtext">
-        Sed sit amet lectus bibendum, sodales ipsum et, ullamcorper ex.
-        Curabitur gravida, est in maximus condimentum, urna nunc varius nisl.
-      </p>
-      <div class="hero-buttons">
-        <a href="#" class="button-alternative">Learn More</a>
-        <a href="/register" class="button-dark">Register Now</a>
-      </div>
-    </div>
-    <div class="location-sec">
-      <h1>
-        Garrison Academy <br />
-        Kharian Cantt
-      </h1>
-      <img src="../resources/location.png" alt="location of gak" />
-      <p id="address">Abrar Colony, Kharian Cantt, Kharian, Gujrat, Punjab</p>
-    </div>
-    <div class="calltoaction-sec">
-      <div class="left">
-        <h3 class="futura-lt">Don’t miss it.</h3>
-        <p class="futura date">Last date to register is 12/24/1947</p>
-        <a href="/register" class="button-light">Register Now</a>
-      </div>
-      <img src="../resources/image.png" alt="picture of gak" />
+
+    <div class="formcontainer">
+      <div><h1>Contact Us</h1></div>
+      <form method="post" action="#">
+        <div class="forminput">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="forminput">
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="forminput">
+          <label for="issue">What would you like help with?</label>
+          <textarea name="issue" id="issue"></textarea>
+        </div>
+        <input class="button-dark" type="submit" value="Submit" />
+      </form>
     </div>
 
     <footer class="footer-long">
@@ -107,26 +93,5 @@
       </div>
     </footer>
     <footer class="footer-short"><p>© Kharian Sports Fest 2024</p></footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyCJlMQv7Nz1jlPEPTA0Lv1-beekeJQVgXo",
-        authDomain: "khariansportsfest-fde2f.firebaseapp.com",
-        projectId: "khariansportsfest-fde2f",
-        storageBucket: "khariansportsfest-fde2f.appspot.com",
-        messagingSenderId: "563033377764",
-        appId: "1:563033377764:web:fbd732594d4786ebc0d5f1",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-    </script>
   </body>
 </html>

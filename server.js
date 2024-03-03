@@ -5,6 +5,7 @@ const port = 3000;
 
 app.use(express.static("public/home"));
 app.use(express.static("public/register"));
+app.use(express.static("public/contact"));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
@@ -13,6 +14,10 @@ app.get("/", (req, res) => {
 
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "public/register/index.html"));
+});
+
+app.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/contact/index.html"));
 });
 
 app.listen(port, () => {

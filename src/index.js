@@ -1,4 +1,9 @@
 import "./style.css";
+import "./home/style.css";
+import "./register/style.css";
+import "./contact/style.css";
+
+import "./resources/logo.webp";
 
 $(function () {
   $(".toggle").on("click", function () {

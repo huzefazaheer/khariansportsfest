@@ -2,7 +2,7 @@
   "hosting": {
     "site": "khariansportsfest",
 
-    "public": "public",
+    "public": "dist",
 
     "redirects": [
       {

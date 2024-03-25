@@ -3,17 +3,17 @@
 
 @font-face {
   font-family: Futura;
-  src: url("../resources/fonts/futura/Futura\ Book\ font.ttf");
+  src: url("./resources/fonts/futura/Futura\ Book\ font.ttf");
 }
 
 @font-face {
   font-family: Futura-MD;
-  src: url("../resources/fonts/futura/futura\ medium\ bt.ttf");
+  src: url("./resources/fonts/futura/futura\ medium\ bt.ttf");
 }
 
 @font-face {
   font-family: Futura-LT;
-  src: url("../resources/fonts/futura/futura\ light\ bt.ttf");
+  src: url("./resources/fonts/futura/futura\ light\ bt.ttf");
 }
 
 :root {
@@ -55,15 +55,17 @@
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 .button-light {
   background-color: var(--color-primary);
-  color: var(--color-secondary);
+  color: var(--color-accent);
   border: 1px solid var(--color-primary);
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 .button-alternative {
@@ -73,6 +75,7 @@
   padding: 1rem;
   font-family: Futura-MD;
   font-size: 1rem;
+  text-align: center;
 }
 
 a,
@@ -148,84 +151,6 @@ nav li a:hover {
     position: absolute;
     top: 20px;
     right: 20px;
-  }
-}
-
-.formcontainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10vh;
-  background-color: var(--color-background);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-h1 {
-  font-size: 72px;
-  font-family: Cinzel, sans-serif;
-  font-weight: 400;
-}
-
-.forminput {
-  display: grid;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-top: 4vh;
-  row-gap: 1vh;
-}
-
-label {
-  color: var(--color-secondary);
-  font-family: Futura;
-  font-size: 1rem;
-}
-
-input {
-  background-color: #ffffff00;
-}
-
-input:not([type="submit"]) {
-  border: var(--color-secondary) 1px solid;
-  padding: 1vh 0.5vw;
-  width: 40vw;
-}
-
-input[type="submit"] {
-  margin-top: 4vh;
-  padding-left: 6vw;
-  padding-right: 6vw;
-}
-
-/* Form for mobile screens */
-@media (max-width: 600px) {
-  form {
-    padding-top: 0;
-  }
-
-  .formcontainer {
-    padding-top: 4vh;
-  }
-
-  .forminput {
-    margin-top: 3vh;
-  }
-
-  input:not([type="submit"]) {
-    width: 80vw;
-    padding: 1vh 1vw;
-  }
-
-  input[type="submit"] {
-    padding-left: 25vw;
-    padding-right: 25vw;
   }
 }
 
@@ -317,7 +242,6 @@ footer img {
   color: #1b3d2f;
 }
 
-/* Footer for mobile screens */
 @media (max-width: 900px) {
   footer {
     display: flex;
@@ -331,9 +255,9 @@ footer img {
     margin-right: 0;
     margin-left: 0;
     margin-top: 6vh;
-  }
 
-  .footer-right > * {
-    margin-left: 0;
+    .footer-right > * {
+      margin-left: 0;
+    }
   }
 }

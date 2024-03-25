@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kharian Sports Fest</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="index.js" defer></script>
+    <title>Kharian Sports Festival</title>
+    <link
+      rel="shortcut icon"
+      href="/Screenshot 2024-02-28 175329.png"
+      type="image/x-icon"
+    />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
-  </head>
+  <script defer src="../main.js"></script><link href="../main.css" rel="stylesheet"></head>
   <body>
     <nav>
       <div class="logo">
@@ -28,24 +31,40 @@
         <li><a href="/contact" class="futura">Contact Us</a></li>
       </ul>
     </nav>
-
-    <div class="formcontainer">
-      <div><h1>Contact Us</h1></div>
-      <form method="post" action="#">
-        <div class="forminput">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
-        </div>
-        <div class="forminput">
-          <label for="email">Email Address</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div class="forminput">
-          <label for="issue">What would you like help with?</label>
-          <textarea name="issue" id="issue"></textarea>
-        </div>
-        <input class="button-dark" type="submit" value="Submit" />
-      </form>
+    <div class="hero-sec">
+      <div class="hero-img">
+        <img src="../resources/logo.webp" alt="" />
+        <p class="hero-text">
+          Kharian<br />
+          Sports Fest
+        </p>
+      </div>
+      <p class="hero-subtext">
+        Sed sit amet lectus bibendum, sodales ipsum et, ullamcorper ex.
+        Curabitur gravida, est in maximus condimentum, urna nunc varius nisl.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="button-alternative">Learn More</a>
+        <a href="/register" class="button-dark">Register Now</a>
+      </div>
+    </div>
+    <div class="location-sec">
+      <h1>
+        Garrison Academy <br />
+        Kharian Cantt
+      </h1>
+      <img src="../resources/location.webp" alt="location of gak" />
+      <p id="address">Abrar Colony, Kharian Cantt, Kharian, Gujrat, Punjab</p>
+    </div>
+    <div class="calltoaction-sec">
+      <div class="left">
+        <h3 class="futura-lt">Don’t miss it.</h3>
+        <p class="futura date">
+          Last date to register is <span class="date">12/24/1947</span>
+        </p>
+        <a href="/register" class="button-light">Register Now</a>
+      </div>
+      <img src="../resources/school.webp" alt="picture of gak" />
     </div>
 
     <footer class="footer-long">

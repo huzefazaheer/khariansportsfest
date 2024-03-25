@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -19,6 +20,7 @@ module.exports = {
       filename: "./home/index.html",
       template: "./src/home/index.html",
     }),
+    new MiniCssExtractPlugin({}),
     new HtmlWebpackPlugin({
       title: "Kharian Sports Fest",
       filename: "./register/index.html",
@@ -39,7 +41,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

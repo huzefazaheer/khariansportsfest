@@ -26,8 +26,26 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: "Not Found",
-      filename: "./contact/404.html",
+      filename: "./404.html",
       template: "./src/404.html",
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(ttf|otf)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[hash].[ext]",
+            outputPath: "./fonts",
+          },
+        },
+      },
+    ],
+  },
 };

@@ -1,3 +1,5 @@
+import "./style.css";
+
 $(function () {
   $(".toggle").on("click", function () {
     if ($(".menu").hasClass("active")) {

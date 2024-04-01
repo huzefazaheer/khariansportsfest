@@ -1,2 +1,1 @@
-import './home.js'
-import './style.css'
+import '../index.js'

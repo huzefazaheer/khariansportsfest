@@ -3,25 +3,26 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Kharian Sports Festival</title>
+		<title>Kharian Sports Fest</title>
 		<link
 			rel="shortcut icon"
 			href="/Screenshot 2024-02-28 175329.png"
 			type="image/x-icon"
 		/>
-		<script
+		<link href="css/register.1.css" rel="stylesheet">
+<script
 			type="module"
 			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
 		></script>
-		<script src="home.js" defer></script>
-		<link rel="stylesheet" href="home.css" />
-		<link rel="stylesheet" href="../style.css" />
+		<script src="js/register.js" defer></script>
+		<link rel="stylesheet" href="css/register.css" />
+		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
 		<nav>
 			<div class="logo">
 				<a href="/"
-					><img src="../resources/logo.webp" alt="ksf logo" />
+					><img src="resources/69b92e151c6dd766bd44.webp" alt="ksf logo" />
 					<p class="cinzel bold">Kharian Sports Fest</p></a
 				>
 			</div>
@@ -34,45 +35,46 @@
 				<li><a href="/contact" class="futura">Contact Us</a></li>
 			</ul>
 		</nav>
-		<div class="hero-sec">
-			<div class="hero-img">
-				<img src="../resources/logo.webp" alt="" />
-				<p class="hero-text">
-					Kharian<br />
-					Sports Fest
-				</p>
-			</div>
-			<p class="hero-subtext">
-				Sed sit amet lectus bibendum, sodales ipsum et, ullamcorper ex.
-				Curabitur gravida, est in maximus condimentum, urna nunc varius nisl.
-			</p>
-			<div class="hero-buttons">
-				<a href="#" class="button-alternative">Learn More</a>
-				<a href="/register" class="button-dark">Register Now</a>
-			</div>
-		</div>
-		<div class="location-sec">
-			<h1>
-				Garrison Academy <br />
-				Kharian Cantt
-			</h1>
-			<img src="../resources/location.webp" alt="location of gak" />
-			<p id="address">Abrar Colony, Kharian Cantt, Kharian, Gujrat, Punjab</p>
-		</div>
-		<div class="calltoaction-sec">
-			<div class="left">
-				<h3 class="futura-lt">Don’t miss it.</h3>
-				<p class="futura date">
-					Last date to register is <span class="date">12/24/1947</span>
-				</p>
-				<a href="/register" class="button-light">Register Now</a>
-			</div>
-			<img src="../resources/school.webp" alt="picture of gak" />
+
+		<div class="formcontainer">
+			<div><h1>Register</h1></div>
+			<form
+				method="post"
+				action="https://script.google.com/macros/s/AKfycbzq3ijSrPnLDrGfxil897bGdcA3U3VgGk1E2vxm3e7Rn0z3v7_7LKV95qAYS_koQgM6/exec"
+			>
+				<div class="forminput">
+					<label for="name">Full Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="forminput">
+					<label for="age">Age</label>
+					<input type="number" name="age" id="age" />
+				</div>
+				<div class="forminput">
+					<label for="email">Email Address</label>
+					<input type="email" name="email" id="email" />
+				</div>
+				<div class="forminput">
+					<label for="cnic">CNIC Number</label>
+					<input
+						type="tel"
+						pattern="(\d{5}-)(\d{7}-)(\d{1})"
+						placeholder="XXXXX-XXXXXXX-X"
+						name="cnic"
+						id="cnic"
+					/>
+				</div>
+				<div class="forminput">
+					<label for="phone">Phone Number</label>
+					<input type="tel" name="phone" id="phone" />
+				</div>
+				<input class="button-dark" type="button" value="Continue To Payment" />
+			</form>
 		</div>
 
 		<footer class="footer-long">
 			<div id="footer-icon" class="footer-content">
-				<img src="../resources/logo.webp" alt="" />
+				<img src="resources/69b92e151c6dd766bd44.webp" alt="" />
 				<p>Kharian Sports Festival</p>
 
 				<div class="icons">

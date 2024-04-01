@@ -1,52 +1,38 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
 
 module.exports = {
 	mode: 'development',
-	entry: {
-		index: ['./src/index.js'],
-		home: ['./src/home/home.js'],
-		register: ['./src/register/register.js'],
-		contact: ['./src/contact/contact.js'],
-	},
 	output: {
-		path: path.resolve(__dirname, 'dist/'),
-		filename: '[name]/[name].js',
+		path: path.resolve(__dirname, 'dist'),
+		clean: true,
 	},
 	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Kharian Sports Fest',
-			filename: './home/home.html',
-			template: './src/home/home.html',
-		}),
-		new HtmlWebpackPlugin({
-			title: 'Kharian Sports Fest',
-			filename: './register/register.html',
-			template: './src/register/register.html',
-		}),
-		new HtmlWebpackPlugin({
-			title: 'Kharian Sports Fest',
-			filename: './contact/contact.html',
-			template: './src/contact/contact.html',
-		}),
-		new HtmlWebpackPlugin({
-			title: 'Not Found',
-			filename: './404.html',
-			template: './src/404.html',
-		}),
-		new MiniCssExtractPlugin({
-			filename: '[name]/[name].css',
+		new HtmlBundlerPlugin({
+			entry: {
+				home: 'src/home/home.html',
+				register: './src/register/register.html',
+				contact: './src/contact/contact.html',
+				notfound: './src/404.html',
+			},
+			js: {
+				// output filename for JS
+				filename: 'js/[name].js',
+			},
+			css: {
+				// output filename for CSS
+				filename: 'css/[name].css',
+			},
 		}),
 	],
 	module: {
 		rules: [
 			{
-				test: /\.css$/,
-				use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
+				test: /\.(css)$/,
+				use: ['css-loader'],
 			},
 			{
-				test: /\.(woff|woff2|eot|ttf|otf)$/i,
+				test: /\.(woff|woff2|eot|ttf|otf|webp)$/i,
 				type: 'asset/resource',
 				generator: {
 					filename: 'resources/[hash][ext][query]',

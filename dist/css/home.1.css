@@ -1,19 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
-
-@font-face {
+@import url(https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap);@import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap);@font-face {
 	font-family: Futura;
-	src: url('./resources/fonts/futura/Futura\ Book\ font.ttf');
+	src: url(../resources/ed19af444f0976dbaf41.ttf);
 }
 
 @font-face {
 	font-family: Futura-MD;
-	src: url('./resources/fonts/futura/futura\ medium\ bt.ttf');
+	src: url(../resources/4e762c29ef7b44ca51cb.ttf);
 }
 
 @font-face {
 	font-family: Futura-LT;
-	src: url('./resources/fonts/futura/futura\ light\ bt.ttf');
+	src: url(../resources/ead7282f8edac7904e53.ttf);
 }
 
 :root {

@@ -1,2 +1,1 @@
-import './register.js'
-import './style.css'
+import '../index.js'

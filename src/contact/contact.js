@@ -1,5 +1,4 @@
-import './contact.js'
-import './style.css'
+import '../index.js'
 
 const name = document.getElementById('name')
 const email = document.getElementById('email')

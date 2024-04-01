@@ -1,3 +1,6 @@
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/contact/style.css ***!
+  \*************************************************************************/
 .formcontainer {
 	display: flex;
 	flex-direction: column;
@@ -87,3 +90,4 @@ input[type='button'] {
 		text-align: center;
 	}
 }
+

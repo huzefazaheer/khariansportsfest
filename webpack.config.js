@@ -15,13 +15,14 @@ module.exports = {
 				contact: './src/contact/contact.html',
 				notfound: './src/404.html',
 			},
+			filename: '[name]/index.html',
 			js: {
 				// output filename for JS
-				filename: 'js/[name].js',
+				filename: '[name]/[name].js',
 			},
 			css: {
 				// output filename for CSS
-				filename: 'css/[name].css',
+				filename: '[name]/[name].css',
 			},
 		}),
 	],

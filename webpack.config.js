@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+var webpack = require('webpack')
 
 module.exports = {
 	entry: './src/react/index.js', // Entry point of your application
@@ -11,6 +12,9 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './src/react/index.html',
+		}),
+		new webpack.ProvidePlugin({
+			React: 'react',
 		}),
 	],
 	module: {

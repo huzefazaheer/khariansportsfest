@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Home() {
 	return (
 		<>
@@ -25,12 +27,12 @@ function Hero() {
 					Curabitur gravida, est in maximus condimentum, urna nunc varius nisl.
 				</p>
 				<div className="hero-buttons">
-					<a href="#" className="button-alternative">
+					<Link to="/about" className="button-alternative">
 						Learn More
-					</a>
-					<a href="/register" className="button-dark">
+					</Link>
+					<Link to="/register" className="button-dark">
 						Register Now
-					</a>
+					</Link>
 				</div>
 			</div>
 		</>

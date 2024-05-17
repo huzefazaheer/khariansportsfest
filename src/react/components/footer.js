@@ -1,8 +1,6 @@
 export default function Footer() {
 	return (
 		<>
-			<link type="text/css" href="/footer.scss" />
-
 			<div>
 				<footer class="footer-long">
 					<div id="footer-icon" className="footer-content">

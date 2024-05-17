@@ -1,33 +1,35 @@
-export function NavigationBar() {
+import { Link } from 'react-router-dom'
+
+export default function NavigationBar() {
 	return (
 		<>
 			<nav>
 				<div className="logo">
-					<a href="/">
+					<Link to="/">
 						<img src="resources/logo.webp" alt="ksf logo" />
 						<p className="cinzel bold">Kharian Sports Fest</p>
-					</a>
+					</Link>
 				</div>
 				<div className="toggle">
-					<a href="#">
+					<Link to="#">
 						<ion-icon name="menu-outline" />
-					</a>
+					</Link>
 				</div>
 				<ul className="menu">
 					<li>
-						<a href="#" className="futura">
+						<Link to="#" className="futura">
 							The Team
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/register" className="futura">
+						<Link to="/register" className="futura">
 							Register
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/contact" className="futura">
+						<Link to="/contact" className="futura">
 							Contact Us
-						</a>
+						</Link>
 					</li>
 				</ul>
 			</nav>

@@ -1,10 +1,12 @@
-export function Footer() {
+export default function Footer() {
 	return (
 		<>
+			<link type="text/css" href="/footer.scss" />
+
 			<div>
 				<footer class="footer-long">
 					<div id="footer-icon" className="footer-content">
-						<img src="../resources/logo.webp" alt="" />
+						<img src="resources/logo.webp" alt="" />
 						<p>Kharian Sports Festival</p>
 						<div className="icons">
 							<a className="red" href="#">

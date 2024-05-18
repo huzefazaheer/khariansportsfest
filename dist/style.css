@@ -484,8 +484,11 @@ form {
 	padding: 2rem;
 }
 
-h1 {
+form h1 {
 	font-size: 72px;
+}
+
+h1 {
 	font-family: Cinzel, sans-serif;
 	font-weight: 400;
 }

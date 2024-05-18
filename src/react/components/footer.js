@@ -7,10 +7,10 @@ export default function Footer() {
 						<img src="resources/logo.webp" alt="" />
 						<p>Kharian Sports Festival</p>
 						<div className="icons">
-							<a className="red" href="#">
+							<a href="https://www.instagram.com/khariansportsfest/">
 								<ion-icon name="logo-instagram" />
 							</a>
-							<a className="gold" href="#">
+							<a href="mailto:khariansportsfest@gmail.com">
 								<ion-icon name="mail-outline" />
 							</a>
 						</div>

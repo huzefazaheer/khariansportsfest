@@ -7,7 +7,7 @@ nav {
 	background-color: var(--color-primary);
 	padding: 5px 2rem;
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
 	min-height: 9.6vh;
 	border-bottom: 1px solid var(--color-secondary);
 }
@@ -19,25 +19,47 @@ nav li a:hover {
 	text-decoration: underline;
 }
 
+.menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+.menu li {
+	padding: 20px 20px;
+	font-size: 1rem;
+}
+
+.toggler {
+	display: none;
+}
+
 /* Navbar toggle for mobile screens */
 @media screen and (max-width: 600px) {
 	nav {
 		display: block;
+		align-items: center;
 		position: relative;
 		padding: 15px 20px;
+	}
+
+	nav .top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	.menu {
 		display: none;
 	}
-	.menu.active,
-	.toggle {
-		display: block;
-		margin-top: 12px;
+	.menu#active,
+	.toggler {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
 	}
-	.toggle {
-		position: absolute;
-		top: 20px;
-		right: 20px;
+	.toggler {
+		font-size: 2rem;
 	}
 }

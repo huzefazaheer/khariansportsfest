@@ -9,23 +9,25 @@ export default function NavigationBar() {
 	return (
 		<>
 			<nav>
-				<div className="logo">
-					<Link to="/">
-						<img src="resources/logo.webp" alt="ksf logo" />
-						<p className="cinzel bold">Kharian Sports Fest</p>
-					</Link>
+				<div className="top">
+					<div className="logo">
+						<Link to="/">
+							<img src="resources/logo.webp" alt="ksf logo" />
+							<p className="cinzel bold">Kharian Sports Fest</p>
+						</Link>
+					</div>
+					<div
+						className="toggler"
+						onClick={() => {
+							setMenuOpen(!menuOpen)
+						}}
+					>
+						<Link className="toggler" to="#">
+							<ion-icon name="menu-outline" />
+						</Link>
+					</div>
 				</div>
-				<div
-					className="toggle"
-					onClick={() => {
-						setMenuOpen(!menuOpen)
-					}}
-				>
-					<Link to="#">
-						<ion-icon name="menu-outline" />
-					</Link>
-				</div>
-				<ul className="menu">
+				<ul className="menu" id={menuOpen ? 'active' : ''}>
 					<li>
 						<Link to="#" className="futura">
 							The Team

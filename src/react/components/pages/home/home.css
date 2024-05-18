@@ -14,17 +14,6 @@
 	font-size: 1rem;
 }
 
-.menu {
-	display: flex;
-	align-items: center;
-	list-style: none;
-}
-
-.menu li {
-	padding: 20px 20px;
-	font-size: 1rem;
-}
-
 .toggle {
 	font-size: 2rem;
 	display: none;

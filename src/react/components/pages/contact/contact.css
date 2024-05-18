@@ -102,3 +102,10 @@ h5 {
 	grid-template-columns: 1fr 1fr;
 	column-gap: 1rem;
 }
+
+textarea {
+	border: var(--color-secondary) solid 1px;
+	background-color: #ffffff00;
+	padding: 1vh 0.5vw;
+	width: 40vw;
+}

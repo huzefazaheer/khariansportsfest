@@ -3,8 +3,6 @@ import Select from 'react-select'
 import './register.css'
 import { useState } from 'react'
 
-let ticketno
-
 const options = [
 	{ value: 'football', label: 'Football' },
 	{ value: 'basketball', label: 'Basketball' },
@@ -25,20 +23,41 @@ const socialsoptions = [
 ]
 
 export default function Register() {
+	const [page, setpage] = useState(0)
+	const formtitles = ['', 'Person 1', 'Person 2']
+	const form = [
+		<RegisterWelcome />,
+		<RegisterPerson />,
+		<RegisterPerson />,
+		<RegisterEnd />,
+	]
 	return (
 		<>
 			<div class="registersec">
 				<h1>Register</h1>
-				<h2></h2>
+				<h2>{formtitles[page]}</h2>
 
-				<RegisterWelcome />
-
-				<RegisterPerson />
-				<RegisterPerson />
+				{form[page]}
 
 				<div className="buttongroup">
-					<button class="button-light">Back</button>
-					<button class="button-dark">Next</button>
+					<button
+						disabled={page == 0}
+						class="button-light"
+						onClick={() => {
+							setpage((currpage) => currpage - 1)
+						}}
+					>
+						Back
+					</button>
+					<button
+						disabled={page == 3}
+						class="button-dark"
+						onClick={() => {
+							setpage((currpage) => currpage + 1)
+						}}
+					>
+						Next
+					</button>
 				</div>
 			</div>
 		</>
@@ -128,6 +147,7 @@ function RegisterPerson() {
 function RegisterWelcome() {
 	return (
 		<>
+			const [ticketAmount, setTicketAmount] = useState('')
 			<div className="formcontainer">
 				<h4>Please keep your id documents at hand</h4>
 				<p>
@@ -140,6 +160,17 @@ function RegisterWelcome() {
 					</label>
 					<input type="text" name="name" id="name" />
 				</div>
+			</div>
+		</>
+	)
+}
+
+function RegisterEnd() {
+	return (
+		<>
+			<div className="formcontainer">
+				<h4>Thank you for registering to Kharian Sports Fest</h4>
+				<p>Below are the ways you can submit your payment</p>
 			</div>
 		</>
 	)

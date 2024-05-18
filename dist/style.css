@@ -230,16 +230,11 @@ footer img {
 	display: inline-block;
 	font-size: 22px;
 	transition: all 0.4 ease;
+	color: #1b3d2f;
 }
 
 .icons a:hover {
 	transform: translateY(-5px);
-}
-.red {
-	color: #1b3d2f;
-}
-.gold {
-	color: #1b3d2f;
 }
 
 @media (max-width: 900px) {

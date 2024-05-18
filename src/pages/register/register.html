@@ -16,7 +16,7 @@
 		></script>
 		<script src="register.js" defer></script>
 		<link rel="stylesheet" href="register.css" />
-		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="../../style.css" />
 	</head>
 	<body>
 		<nav>
@@ -38,10 +38,26 @@
 
 		<div class="formcontainer">
 			<div><h1>Register</h1></div>
-			<form
-				method="post"
-				action="https://script.google.com/macros/s/AKfycbzq3ijSrPnLDrGfxil897bGdcA3U3VgGk1E2vxm3e7Rn0z3v7_7LKV95qAYS_koQgM6/exec"
-			>
+
+			<form method="post" action="#">
+				<h5>KSF Registeration</h5>
+				<h4>Please keep your id documents at hand</h4>
+				<p>
+					CNIC -if above 18 <br />
+					B Form If under age
+				</p>
+
+				<div class="forminput">
+					<label for="name"
+						>Enter the number of tickets you would like to purchase</label
+					>
+					<input type="text" name="name" id="name" />
+				</div>
+
+				<input class="button-dark" type="button" value="Continue" />
+			</form>
+
+			<form method="post" action="#">
 				<div class="forminput">
 					<label for="name">Full Name</label>
 					<input type="text" name="name" id="name" />

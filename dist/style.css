@@ -58,6 +58,14 @@
 	text-align: center;
 }
 
+.button-dark:hover {
+	background-color: #163126;
+}
+
+.button-dark:active {
+	background-color: #10241b;
+}
+
 .button-light {
 	background-color: var(--color-primary);
 	color: var(--color-accent);
@@ -66,6 +74,16 @@
 	font-family: Futura-MD;
 	font-size: 1rem;
 	text-align: center;
+}
+
+.button-light:hover,
+.button-alternative:hover {
+	background-color: #e7e2d8;
+}
+
+.button-light:active,
+.button-alternative:active {
+	background-color: #dfd9d0;
 }
 
 .button-alternative {

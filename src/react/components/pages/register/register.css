@@ -1,8 +1,4 @@
 .formcontainer {
-	/* display: flex;
-	flex-direction: column;
-	justify-content: center; */
-	align-items: center;
 	padding-top: 10vh;
 	background-color: var(--color-background);
 }
@@ -47,10 +43,28 @@ input[type='button'] {
 	padding-right: 6vw;
 }
 
+.buttongroup {
+	margin-top: 12vh;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 16rem 16rem;
+	column-gap: 6vw;
+}
+
+.registersec,
+.contactsec {
+	background-color: var(--color-background);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 8vh 0;
+}
+
 /* Form for mobile screens */
 @media (max-width: 600px) {
 	.formcontainer {
 		padding-top: 2vh;
+		margin: 0 2rem;
 	}
 
 	.forminput {
@@ -67,18 +81,21 @@ input[type='button'] {
 		padding-right: 25vw;
 	}
 
-	h1 {
-		text-align: center;
+	.registersec {
+		padding: 4vh 4vw;
 	}
-}
 
-.registersec,
-.contactsec {
-	background-color: var(--color-background);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 8vh 0;
+	.registersec h1 {
+		text-align: center;
+		font-size: 3rem;
+		margin-top: 0;
+	}
+
+	.buttongroup {
+		margin-top: 8vh;
+		grid-template-columns: 10rem 10rem;
+		color-scheme: 8rem;
+	}
 }
 
 h4 {

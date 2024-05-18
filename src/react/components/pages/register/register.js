@@ -7,7 +7,14 @@ export default function Register() {
 		<>
 			<div class="registersec">
 				<h1>Register</h1>
+				<h2></h2>
+
 				<RegisterWelcome />
+
+				<div className="buttongroup">
+					<button class="button-light">Back</button>
+					<button class="button-dark">Next</button>
+				</div>
 			</div>
 		</>
 	)
@@ -94,7 +101,7 @@ function RegisterWelcome() {
 			<div className="formcontainer">
 				<h4>Please keep your id documents at hand</h4>
 				<p>
-					CNIC -if above 18 <br /> B Form If under age
+					CNIC (if above 18) <br /> B Form (if under age)
 				</p>
 
 				<div class="forminput">

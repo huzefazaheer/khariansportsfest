@@ -1,0 +1,43 @@
+a,
+a:hover {
+	text-decoration: none;
+}
+
+nav {
+	background-color: var(--color-primary);
+	padding: 5px 2rem;
+	display: flex;
+	align-items: center;
+	min-height: 9.6vh;
+	border-bottom: 1px solid var(--color-secondary);
+}
+nav a {
+	color: var(--color-secondary);
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+/* Navbar toggle for mobile screens */
+@media screen and (max-width: 600px) {
+	nav {
+		display: block;
+		position: relative;
+		padding: 15px 20px;
+	}
+
+	.menu {
+		display: none;
+	}
+	.menu.active,
+	.toggle {
+		display: block;
+		margin-top: 12px;
+	}
+	.toggle {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+}

@@ -1,6 +1,11 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import './navbar.css'
+
 export default function NavigationBar() {
+	const [menuOpen, setMenuOpen] = useState(false)
+
 	return (
 		<>
 			<nav>
@@ -10,7 +15,12 @@ export default function NavigationBar() {
 						<p className="cinzel bold">Kharian Sports Fest</p>
 					</Link>
 				</div>
-				<div className="toggle">
+				<div
+					className="toggle"
+					onClick={() => {
+						setMenuOpen(!menuOpen)
+					}}
+				>
 					<Link to="#">
 						<ion-icon name="menu-outline" />
 					</Link>

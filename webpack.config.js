@@ -29,6 +29,10 @@ module.exports = {
 				},
 			},
 			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+			},
+			{
 				test: /\.(woff|woff2|eot|ttf|otf|webp)$/i,
 				type: 'asset/resource',
 				generator: {

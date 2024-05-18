@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 
-import NavigationBar from './components/navbar'
-import Footer from './components/footer'
-import Home from './components/home'
-import Register from './components/register'
-import Contact from './components/contact'
+import './style.css'
+
+import NavigationBar from './components/navbar/navbar'
+import Footer from './components/footer/footer'
+import Home from './components/pages/home/home'
+import Register from './components/pages/register/register'
+import Contact from './components/pages/contact/contact'
 
 export default function App() {
 	return (

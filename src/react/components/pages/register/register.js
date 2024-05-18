@@ -1,3 +1,7 @@
+import './register.css'
+
+let ticketno
+
 export default function Register() {
 	return (
 		<>

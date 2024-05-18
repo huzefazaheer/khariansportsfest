@@ -61,7 +61,9 @@ export default function Footer() {
 									<Link to="/contact">Contact Staff</Link>
 								</li>
 								<li>
-									<a href="#">Investor Relations</a>
+									<a href="mailto:khariansportsfest@gmail.com?subject=Sponsor details">
+										Sponsor Relations
+									</a>
 								</li>
 							</ul>
 						</div>

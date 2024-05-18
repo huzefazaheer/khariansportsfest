@@ -1,6 +1,28 @@
+import Select from 'react-select'
+
 import './register.css'
+import { useState } from 'react'
 
 let ticketno
+
+const options = [
+	{ value: 'football', label: 'Football' },
+	{ value: 'basketball', label: 'Basketball' },
+	{ value: 'cricket', label: 'Cricket' },
+	{ value: 'tabletennis', label: 'Table Tennis' },
+	{ value: 'badminton', label: 'Badminton' },
+	{ value: 'volleyball', label: 'Volleyball' },
+	{ value: 'snooker', label: 'Snooker' },
+	{ value: 'egames', label: 'E-games' },
+	{ value: 'chess', label: 'Chess' },
+	{ value: 'ludo', label: 'Ludo' },
+	{ value: 'eatingchallenge', label: 'Khao' },
+]
+
+const socialsoptions = [
+	{ value: 'yes', label: 'Yes' },
+	{ value: 'no', label: 'No' },
+]
 
 export default function Register() {
 	return (
@@ -10,6 +32,9 @@ export default function Register() {
 				<h2></h2>
 
 				<RegisterWelcome />
+
+				<RegisterPerson />
+				<RegisterPerson />
 
 				<div className="buttongroup">
 					<button class="button-light">Back</button>
@@ -21,6 +46,8 @@ export default function Register() {
 }
 
 function RegisterPerson() {
+	const [selectedOptions, setSelectedOptions] = useState([])
+
 	return (
 		<>
 			<div className="formcontainer">
@@ -65,29 +92,32 @@ function RegisterPerson() {
 							<input type="tel" name="phone" id="phone" />
 						</div>
 					</div>
-					<div className="forminput inputcontainer">
+					<div className="inputcontainer">
 						<label htmlFor="socialsincluded">
 							Do you want socials included?
 						</label>
-						<input type="checkbox" name="socials" id="socialsincluded" />
+						<Select
+							id="socialsincluded"
+							className="react-select-container"
+							classNamePrefix="react-select"
+							options={socialsoptions}
+						/>
 					</div>
 
-					<div className="forminput">
+					<div className="inputcontainer">
 						<label for="sports">Choose sports</label>
 
-						<select name="sports" id="sports" multiple>
-							<option value="football">Football</option>
-							<option value="basketball">Basketball</option>
-							<option value="cricket">Cricket</option>
-							<option value="tabletennis">Table Tennis</option>
-							<option value="badminton">Badminton</option>
-							<option value="volleyball">Volleyball</option>
-							<option value="snooker">Snooker</option>
-							<option value="egames">E-games</option>
-							<option value="chess">Chess</option>
-							<option value="ludo">Ludo</option>
-							<option value="eatingchallenge">Khao</option>
-						</select>
+						<Select
+							id="sports"
+							className="react-select-container"
+							classNamePrefix="react-select"
+							options={options}
+							value={selectedOptions}
+							onChange={(selectedOption) => {
+								setSelectedOptions(selectedOption)
+							}}
+							isMulti={true}
+						/>
 					</div>
 				</form>
 			</div>

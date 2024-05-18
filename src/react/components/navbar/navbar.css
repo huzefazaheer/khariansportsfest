@@ -8,7 +8,7 @@ nav {
 	padding: 5px 2rem;
 	display: flex;
 	justify-content: space-between;
-	min-height: 9.6vh;
+	min-height: 12vh;
 	border-bottom: 1px solid var(--color-secondary);
 }
 nav a {
@@ -17,6 +17,11 @@ nav a {
 
 nav li a:hover {
 	text-decoration: underline;
+}
+
+.top {
+	display: flex;
+	align-items: center;
 }
 
 .menu {

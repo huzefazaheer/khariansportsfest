@@ -77,7 +77,6 @@ export default function Register() {
 								// implement handing this data to database
 								console.log(JSON.stringify(personData))
 								writeUserData(personData)
-								window.location.href = '/'
 							}
 						}}
 					>

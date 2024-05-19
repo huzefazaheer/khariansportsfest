@@ -86,6 +86,15 @@ h5 {
 
 	.forminput {
 		justify-content: center;
+		margin-top: 4vh;
+	}
+
+	.forminput:first-child {
+		margin-top: 0;
+	}
+
+	.forminput:nth-child(3) {
+		justify-content: left;
 	}
 
 	input:not([type='button']) {
@@ -105,14 +114,22 @@ h5 {
 
 	.buttongroup {
 		margin-top: 8vh;
-		grid-template-columns: 10rem 10rem;
-		color-scheme: 8rem;
+		grid-template-columns: 80vw;
+		row-gap: 2vh;
 	}
 
 	.inputcontainer {
 		margin-top: 3vh;
 		display: flex;
 		flex-direction: column;
+	}
+
+	.gender {
+		justify-content: flex-start;
+	}
+
+	.gender > * {
+		width: 80vw;
 	}
 }
 

@@ -17,7 +17,7 @@ export default function Register() {
 		sports: [],
 	})
 
-	const formtitles = ['', 'Person 1']
+	const formtitles = ['', '', '']
 	let form = [
 		<RegisterWelcome />,
 		<RegisterPerson personData={personData} setPersonData={setPersonData} />,

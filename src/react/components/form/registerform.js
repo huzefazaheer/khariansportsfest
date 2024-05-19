@@ -63,7 +63,7 @@ export default function RegisterPerson({ personData, setPersonData }) {
 						</div>
 					</div>
 					<div className="inputcontainer">
-						<div className="forminput">
+						<div className="forminput gender">
 							<label htmlFor="gender">Gender</label>
 							<Select
 								id="gender"

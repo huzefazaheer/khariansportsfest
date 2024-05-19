@@ -1,36 +1,36 @@
 const path = require('path')
-const HtmlBundlerPlugin = require('html-bundler-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
-	mode: 'development',
+	entry: './src/react/index.js', // Entry point of your application
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		clean: true,
+		filename: 'index.bundle.js', // Output bundle file name
+		path: path.resolve(__dirname, 'dist'), // Output directory
 	},
 	plugins: [
-		new HtmlBundlerPlugin({
-			entry: {
-				home: 'src/home/home.html',
-				register: './src/register/register.html',
-				contact: './src/contact/contact.html',
-				notfound: './src/404.html',
-			},
-			filename: '[name]/index.html',
-			js: {
-				// output filename for JS
-				filename: '[name]/[name].js',
-			},
-			css: {
-				// output filename for CSS
-				filename: '[name]/[name].css',
-			},
+		new HtmlWebpackPlugin({
+			template: './src/react/index.html',
+		}),
+		new webpack.ProvidePlugin({
+			React: 'react',
 		}),
 	],
 	module: {
 		rules: [
 			{
-				test: /\.(css)$/,
-				use: ['css-loader'],
+				test: /\.m?js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-react'],
+					},
+				},
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
 			},
 			{
 				test: /\.(woff|woff2|eot|ttf|otf|webp)$/i,

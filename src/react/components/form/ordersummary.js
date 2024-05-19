@@ -1,7 +1,3 @@
-import { useState } from 'react'
-
-import Select from 'react-select'
-
 export default function OrderSummary({ personData, setPersonData }) {
 	let sportslist = ''
 	for (let i = 0; i < personData.sports.length; i++) {

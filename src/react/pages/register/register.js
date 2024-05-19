@@ -4,7 +4,27 @@ import { useState } from 'react'
 import RegisterPerson from '../../components/form/registerform'
 import OrderSummary from '../../components/form/ordersummary'
 
+import { getDatabase, set, ref } from 'firebase/database'
+
 export default function Register() {
+	function writeUserData(person) {
+		const db = getDatabase()
+
+		let sportslist = []
+		for (let i = 0; i < personData.sports.length; i++) {
+			sportslist.push(personData.sports[i].value)
+		}
+
+		set(ref(db, 'participants/' + person.cnic), {
+			name: person.firstname + ' ' + person.lastname,
+			gender: person.gender.value,
+			age: person.age,
+			phone: person.phone,
+			socials: person.socials.value,
+			games: sportslist,
+		})
+	}
+
 	const [page, setpage] = useState(0)
 
 	const [personData, setPersonData] = useState({
@@ -50,13 +70,18 @@ export default function Register() {
 						Back
 					</button>
 					<button
-						disabled={page == 3}
 						class="button-dark"
 						onClick={() => {
 							setpage((currpage) => currpage + 1)
+							if (page == 3) {
+								// implement handing this data to database
+								console.log(JSON.stringify(personData))
+								writeUserData(personData)
+								window.location.href = '/'
+							}
 						}}
 					>
-						Next
+						{page == 3 ? 'Submit' : 'Next'}
 					</button>
 				</div>
 			</div>
@@ -102,8 +127,8 @@ function RegisterEnd() {
 					<li>
 						<h5>In person</h5>
 						<p>
-							Account title: Hamza Ahmed Noor Account # 12287901592403 <br />
-							Bank: HBL
+							In person payments will be taken on the 27th of May, 6:00 evening,
+							in Kharian Cantt
 						</p>
 					</li>
 				</ul>

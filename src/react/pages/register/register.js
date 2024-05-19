@@ -2,6 +2,7 @@ import './register.css'
 import { useState } from 'react'
 
 import RegisterPerson from '../../components/form/registerform'
+import OrderSummary from '../../components/form/ordersummary'
 
 export default function Register() {
 	const [page, setpage] = useState(0)
@@ -17,10 +18,16 @@ export default function Register() {
 		sports: [],
 	})
 
-	const formtitles = ['', '', '']
+	const formtitles = [
+		'',
+		'Enter your details',
+		'Order Summary',
+		'Purchase Confirmed',
+	]
 	let form = [
 		<RegisterWelcome />,
 		<RegisterPerson personData={personData} setPersonData={setPersonData} />,
+		<OrderSummary personData={personData} setPersonData={setPersonData} />,
 		<RegisterEnd />,
 	]
 
@@ -43,7 +50,7 @@ export default function Register() {
 						Back
 					</button>
 					<button
-						disabled={page == 2}
+						disabled={page == 3}
 						class="button-dark"
 						onClick={() => {
 							setpage((currpage) => currpage + 1)
@@ -83,6 +90,23 @@ function RegisterEnd() {
 			<div className="formcontainer">
 				<h4>Thank you for registering to Kharian Sports Fest</h4>
 				<p>Below are the ways you can submit your payment</p>
+				<ul>
+					<li>
+						<h5>Online Payment</h5>
+						<p>
+							Account title: Hamza Ahmed Noor Account # 12287901592403 <br />
+							Bank: HBL
+						</p>
+					</li>
+					<br />
+					<li>
+						<h5>In person</h5>
+						<p>
+							Account title: Hamza Ahmed Noor Account # 12287901592403 <br />
+							Bank: HBL
+						</p>
+					</li>
+				</ul>
 			</div>
 		</>
 	)

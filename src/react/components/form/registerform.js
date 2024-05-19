@@ -27,8 +27,6 @@ const genderoptions = [
 ]
 
 export default function RegisterPerson({ personData, setPersonData }) {
-	const [selectedOptions, setSelectedOptions] = useState([])
-
 	return (
 		<>
 			<div className="formcontainer">

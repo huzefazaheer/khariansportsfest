@@ -4,13 +4,8 @@ const inputType = Object.freeze({
 	GREEN: Symbol('green'),
 })
 
-// export default function Validate(inputtype, input){
-//     error = {}
-//     switch (inputtype) {
-//         case inputtype.text:
-//             if (input is)
-//             break;
-//         default:
-//             break;
-//     }
-// }
+export default function Validate(inputtype, input) {
+	if (input != null) {
+		return true
+	}
+}

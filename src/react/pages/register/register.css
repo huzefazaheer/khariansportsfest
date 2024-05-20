@@ -50,8 +50,7 @@ button {
 	justify-content: center;
 }
 
-.registersec,
-.contactsec {
+.registersec {
 	background-color: var(--color-background);
 	display: flex;
 	flex-direction: column;

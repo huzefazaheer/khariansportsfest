@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import Select from 'react-select'
 
+import Validate from '../../utils/inputvalidator'
+
 const options = [
 	{ value: 'football', label: 'Football' },
 	{ value: 'basketball', label: 'Basketball' },
@@ -27,6 +29,16 @@ const genderoptions = [
 ]
 
 export default function RegisterPerson({ personData, setPersonData }) {
+	function handleChange(e, inputtype) {
+		let text
+		if (inputtype == 'text') {
+			text = event.target.value
+		} else {
+			text = event.value
+		}
+		console.log(Validate(text, inputtype))
+	}
+
 	return (
 		<>
 			<div className="formcontainer">
@@ -39,12 +51,13 @@ export default function RegisterPerson({ personData, setPersonData }) {
 							name="firstname"
 							id="namefirst"
 							value={personData.firstname}
-							onChange={(event) =>
+							onChange={(event) => {
 								setPersonData({
 									...personData,
 									firstname: event.target.value,
 								})
-							}
+								handleChange(event, 'text')
+							}}
 							required
 						/>
 					</div>

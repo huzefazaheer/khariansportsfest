@@ -72,6 +72,7 @@ h5 {
 
 #formtitles {
 	margin-top: 8vh;
+	font-family: Futura;
 }
 
 .registersec p {
@@ -92,7 +93,7 @@ h5 {
 .error {
 	color: rgb(196, 7, 7);
 	font-family: Futura-LT, serif;
-	font-size: 0.7rem;
+	font-size: 0.9rem;
 }
 
 /* Form for mobile screens */

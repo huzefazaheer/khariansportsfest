@@ -36,7 +36,6 @@ export default function RegisterPerson({ personData, setPersonData }) {
 		} else {
 			text = event.value
 		}
-		console.log(Validate(text, inputtype))
 	}
 
 	return (

@@ -1,6 +1,21 @@
 import './contact.css'
 
 export default function Contact() {
+	function writeUserData(contact) {
+		const db = getDatabase()
+
+		push(ref(db, 'issues/' + contact.email), {
+			personname: contact.name,
+			issue: contact.issue,
+		})
+	}
+
+	const [contactData, setContactData] = useState({
+		name: '',
+		email: '',
+		issue: '',
+	})
+
 	return (
 		<>
 			<div className="contactsec">
@@ -12,19 +27,56 @@ export default function Contact() {
 						<div className="inputcontainer">
 							<div className="forminput">
 								<label htmlFor="name">Name</label>
-								<input type="text" name="name" id="name" />
+								<input
+									type="text"
+									name="name"
+									id="name"
+									value={contactData.name}
+									onChange={(e) =>
+										setContactData({
+											...contactData,
+											personname: e.target.value,
+										})
+									}
+								/>
 							</div>
 							<div className="forminput">
 								<label htmlFor="email">Email Address</label>
-								<input type="email" name="email" id="email" />
+								<input
+									type="email"
+									name="email"
+									id="email"
+									value={contactData.email}
+									onChange={(e) =>
+										setContactData({
+											...contactData,
+											email: e.target.value,
+										})
+									}
+								/>
 							</div>
 						</div>
 						<div className="forminput textareainput">
 							<label htmlFor="issue">What would you like help with?</label>
-							<textarea name="issue" id="issue" defaultValue={''} />
+							<textarea
+								name="issue"
+								id="issue"
+								defaultValue={''}
+								value={contactData.issue}
+								onChange={(e) =>
+									setContactData({
+										...contactData,
+										issue: e.target.value,
+									})
+								}
+							/>
 						</div>
 						<div className="buttongroup">
-							<button className="button-dark" id="btn_submit">
+							<button
+								className="button-dark"
+								id="btn_submit"
+								onClick={writeUserData(contactData)}
+							>
 								Submit
 							</button>
 						</div>

@@ -4,10 +4,29 @@ import { useState } from 'react'
 import RegisterPerson from '../../components/form/registerform'
 import OrderSummary from '../../components/form/ordersummary'
 
-import { writeUserData } from '../../utils/form'
 import { useNavigate } from 'react-router-dom'
 
+import { getDatabase, push, ref } from 'firebase/database'
+
 export default function Register() {
+	function writeUserData(person) {
+		const db = getDatabase()
+
+		let sportslist = []
+		for (let i = 0; i < personData.sports.length; i++) {
+			sportslist.push(personData.sports[i].value)
+		}
+
+		push(ref(db, 'participants/' + person.cnic), {
+			name: person.firstname + ' ' + person.lastname,
+			gender: person.gender.value,
+			age: person.age,
+			phone: person.phone,
+			socials: person.socials.value,
+			games: sportslist,
+		})
+	}
+
 	const navigate = useNavigate()
 	const [page, setpage] = useState(0)
 	const [personData, setPersonData] = useState({

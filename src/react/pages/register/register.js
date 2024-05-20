@@ -5,8 +5,10 @@ import RegisterPerson from '../../components/form/registerform'
 import OrderSummary from '../../components/form/ordersummary'
 
 import { writeUserData } from '../../utils/form'
+import { useNavigate } from 'react-router-dom'
 
 export default function Register() {
+	const navigate = useNavigate()
 	const [page, setpage] = useState(0)
 	const [personData, setPersonData] = useState({
 		firstname: '',
@@ -45,7 +47,7 @@ export default function Register() {
 						<button
 							disabled={page == 0}
 							class="button-light"
-							id={page == 0 ? 'disabled' : ''}
+							id={page == 0 || page == 3 ? 'disabled' : ''}
 							onClick={(e) => {
 								e.preventDefault()
 								setpage((currpage) => currpage - 1)
@@ -55,18 +57,21 @@ export default function Register() {
 						</button>
 						<button
 							class="button-dark"
-							id={page == 0 ? 'onlybutton' : ''}
+							id={page == 0 || page == 3 ? 'onlybutton' : ''}
 							onClick={(e) => {
 								e.preventDefault()
 								setpage((currpage) => currpage + 1)
-								if (page == 3) {
+								if (page == 2) {
 									// implement handing this data to database
 									console.log(JSON.stringify(personData))
 									writeUserData(personData)
 								}
+								if (page == 3) {
+									navigate('/')
+								}
 							}}
 						>
-							{page == 3 ? 'Submit' : 'Next'}
+							{page == 2 ? 'Confirm Order' : page == 3 ? 'Go Back' : 'Next'}
 						</button>
 					</div>
 				</form>

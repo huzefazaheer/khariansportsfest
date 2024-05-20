@@ -1,10 +1,11 @@
 import './register.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import { getDatabase, push, ref } from 'firebase/database'
 
 import RegisterPerson from '../../components/form/registerform'
 import OrderSummary from '../../components/form/ordersummary'
-
-import { getDatabase, set, ref } from 'firebase/database'
 
 export default function Register() {
 	function writeUserData(person) {
@@ -15,7 +16,7 @@ export default function Register() {
 			sportslist.push(personData.sports[i].value)
 		}
 
-		set(ref(db, 'participants/' + person.cnic), {
+		push(ref(db, 'participants/' + person.cnic), {
 			name: person.firstname + ' ' + person.lastname,
 			gender: person.gender.value,
 			age: person.age,
@@ -25,8 +26,98 @@ export default function Register() {
 		})
 	}
 
-	const [page, setpage] = useState(0)
+	const validateRegisteration = (data) => {
+		const strEmpty = 'Field can not be empty'
+		const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
+		const phoneRegex =
+			/(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/
+		let _error = {
+			firstname: '',
+			lastname: '',
+			gender: '',
+			age: '',
+			cnic: '',
+			phone: '',
+			socials: '',
+			sports: '',
+		}
+		let noError = true
+		if (!data.firstname) {
+			_error.firstname = strEmpty
+			noError = false
+		} else {
+			_error.firstname = ''
+		}
+		if (!data.lastname) {
+			_error.lastname = strEmpty
+			noError = false
+		} else {
+			_error.lastname = ''
+		}
+		if (!data.age) {
+			_error.age = strEmpty
+			noError = false
+		} else if (data.age < 6) {
+			_error.age = 'Age can not be less than 6'
+		} else {
+			_error.age = ''
+		}
+		if (!data.gender) {
+			_error.gender = strEmpty
+			noError = false
+		} else {
+			_error.gender = ''
+		}
+		if (!data.socials) {
+			_error.socials = strEmpty
+			noError = false
+		} else {
+			_error.socials = ''
+		}
+		if (Object.keys(data.sports).length === 0) {
+			_error.sports = strEmpty
+			noError = false
+		} else {
+			_error.sports = ''
+		}
 
+		if (!data.phone) {
+			_error.phone = strEmpty
+			noError = false
+		} else if (phoneRegex.test(data.phone) == false) {
+			_error.phone = 'Invalid phone number'
+			noError = false
+		} else {
+			_error.phone = ''
+		}
+
+		if (!data.cnic) {
+			_error.cnic = strEmpty
+			noError = false
+		} else if (idRegex.test(data.cnic) == false) {
+			_error.cnic = 'Invalid cnic number'
+			noError = false
+		} else {
+			_error.cnic = ''
+		}
+
+		setErrors(_error)
+
+		return noError
+	}
+
+	const [errors, setErrors] = useState({
+		firstname: '',
+		lastname: '',
+		gender: '',
+		age: '',
+		cnic: '',
+		phone: '',
+		socials: '',
+		sports: '',
+	})
+	const navigate = useNavigate()
+	const [page, setpage] = useState(0)
 	const [personData, setPersonData] = useState({
 		firstname: '',
 		lastname: '',
@@ -46,7 +137,12 @@ export default function Register() {
 	]
 	let form = [
 		<RegisterWelcome />,
-		<RegisterPerson personData={personData} setPersonData={setPersonData} />,
+		<RegisterPerson
+			personData={personData}
+			setPersonData={setPersonData}
+			errors={errors}
+			setErrors={setErrors}
+		/>,
 		<OrderSummary personData={personData} setPersonData={setPersonData} />,
 		<RegisterEnd />,
 	]
@@ -55,34 +151,52 @@ export default function Register() {
 		<>
 			<div class="registersec">
 				<h1>Register</h1>
-				<h2>{formtitles[page]}</h2>
+				<h2 id="formtitles">{formtitles[page]}</h2>
 
-				{form[page]}
+				<form method="post" to="#">
+					{form[page]}
 
-				<div className="buttongroup">
-					<button
-						disabled={page == 0}
-						class="button-light"
-						onClick={() => {
-							setpage((currpage) => currpage - 1)
-						}}
-					>
-						Back
-					</button>
-					<button
-						class="button-dark"
-						onClick={() => {
-							setpage((currpage) => currpage + 1)
-							if (page == 3) {
-								// implement handing this data to database
-								console.log(JSON.stringify(personData))
-								writeUserData(personData)
-							}
-						}}
-					>
-						{page == 3 ? 'Submit' : 'Next'}
-					</button>
-				</div>
+					<div className="buttongroup">
+						<button
+							disabled={page == 0}
+							class="button-light"
+							id={page == 0 || page == 3 ? 'disabled' : ''}
+							onClick={(e) => {
+								e.preventDefault()
+								setpage((currpage) => currpage - 1)
+							}}
+						>
+							Back
+						</button>
+						<button
+							class="button-dark"
+							id={page == 0 || page == 3 ? 'onlybutton' : ''}
+							onClick={(e) => {
+								e.preventDefault()
+								if (page == 1) {
+									//validate form
+									if (validateRegisteration(personData)) {
+										console.log('No erros!')
+										setpage((currpage) => currpage + 1)
+									} else {
+										console.log('error :(')
+									}
+								} else if (page == 2) {
+									// implement handing this data to database
+									console.log(JSON.stringify(personData))
+									writeUserData(personData)
+									setpage((currpage) => currpage + 1)
+								} else if (page == 3) {
+									navigate('/')
+								} else {
+									setpage((currpage) => currpage + 1)
+								}
+							}}
+						>
+							{page == 2 ? 'Confirm Order' : page == 3 ? 'Go Back' : 'Next'}
+						</button>
+					</div>
+				</form>
 			</div>
 		</>
 	)

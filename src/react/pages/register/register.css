@@ -37,12 +37,17 @@ input:not([type='button']) {
 	width: 40vw;
 }
 
+button {
+	flex-basis: 16rem;
+	min-width: 16rem;
+}
+
 .buttongroup {
 	margin-top: 12vh;
-	display: grid;
+	display: flex;
 	grid-template-rows: 1fr;
-	grid-template-columns: 16rem 16rem;
 	column-gap: 6vw;
+	justify-content: center;
 }
 
 .registersec,
@@ -77,11 +82,19 @@ h5 {
 	margin-top: 4vh;
 }
 
+#disabled {
+	display: none;
+}
+
 /* Form for mobile screens */
 @media (max-width: 600px) {
 	.formcontainer {
 		padding-top: 2vh;
 		margin: 0 2rem;
+	}
+
+	button {
+		min-width: 0;
 	}
 
 	.forminput {
@@ -116,6 +129,7 @@ h5 {
 		margin-top: 8vh;
 		grid-template-columns: 80vw;
 		row-gap: 2vh;
+		display: grid;
 	}
 
 	.inputcontainer {
@@ -155,10 +169,12 @@ h5 {
 .react-select__multi-value,
 .react-select__placeholder {
 	font-family: Futura, serif;
+	font-size: 1rem;
 }
 
 .react-select__option {
 	font-family: Futura-LT, serif;
+	font-size: 1rem;
 }
 
 .react-select__option:hover,

@@ -4,29 +4,10 @@ import { useState } from 'react'
 import RegisterPerson from '../../components/form/registerform'
 import OrderSummary from '../../components/form/ordersummary'
 
-import { getDatabase, set, ref } from 'firebase/database'
+import { writeUserData } from '../../utils/form'
 
 export default function Register() {
-	function writeUserData(person) {
-		const db = getDatabase()
-
-		let sportslist = []
-		for (let i = 0; i < personData.sports.length; i++) {
-			sportslist.push(personData.sports[i].value)
-		}
-
-		set(ref(db, 'participants/' + person.cnic), {
-			name: person.firstname + ' ' + person.lastname,
-			gender: person.gender.value,
-			age: person.age,
-			phone: person.phone,
-			socials: person.socials.value,
-			games: sportslist,
-		})
-	}
-
 	const [page, setpage] = useState(0)
-
 	const [personData, setPersonData] = useState({
 		firstname: '',
 		lastname: '',
@@ -57,32 +38,38 @@ export default function Register() {
 				<h1>Register</h1>
 				<h2>{formtitles[page]}</h2>
 
-				{form[page]}
+				<form method="post" to="#">
+					{form[page]}
 
-				<div className="buttongroup">
-					<button
-						disabled={page == 0}
-						class="button-light"
-						onClick={() => {
-							setpage((currpage) => currpage - 1)
-						}}
-					>
-						Back
-					</button>
-					<button
-						class="button-dark"
-						onClick={() => {
-							setpage((currpage) => currpage + 1)
-							if (page == 3) {
-								// implement handing this data to database
-								console.log(JSON.stringify(personData))
-								writeUserData(personData)
-							}
-						}}
-					>
-						{page == 3 ? 'Submit' : 'Next'}
-					</button>
-				</div>
+					<div className="buttongroup">
+						<button
+							disabled={page == 0}
+							class="button-light"
+							id={page == 0 ? 'disabled' : ''}
+							onClick={(e) => {
+								e.preventDefault()
+								setpage((currpage) => currpage - 1)
+							}}
+						>
+							Back
+						</button>
+						<button
+							class="button-dark"
+							id={page == 0 ? 'onlybutton' : ''}
+							onClick={(e) => {
+								e.preventDefault()
+								setpage((currpage) => currpage + 1)
+								if (page == 3) {
+									// implement handing this data to database
+									console.log(JSON.stringify(personData))
+									writeUserData(personData)
+								}
+							}}
+						>
+							{page == 3 ? 'Submit' : 'Next'}
+						</button>
+					</div>
+				</form>
 			</div>
 		</>
 	)

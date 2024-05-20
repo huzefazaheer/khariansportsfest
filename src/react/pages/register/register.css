@@ -190,3 +190,8 @@ h5 {
 	background-color: var(--color-secondary) !important;
 	color: var(--color-background) !important;
 }
+
+.react-select__value-container {
+	font-family: Futura;
+	font-size: 1rem;
+}

@@ -50,9 +50,9 @@ function CallToAction() {
 					<p className="futura date">
 						Last date to register is <span className="date">12/24/1947</span>
 					</p>
-					<a href="/register" className="button-light">
+					<Link to="/register" className="button-light">
 						Register Now
-					</a>
+					</Link>
 				</div>
 				<img src="resources/school.webp" alt="picture of gak" />
 			</div>

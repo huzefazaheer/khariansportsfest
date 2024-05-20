@@ -1,12 +1,11 @@
 import './register.css'
 import { useState } from 'react'
-
-import RegisterPerson from '../../components/form/registerform'
-import OrderSummary from '../../components/form/ordersummary'
-
 import { useNavigate } from 'react-router-dom'
 
 import { getDatabase, push, ref } from 'firebase/database'
+
+import RegisterPerson from '../../components/form/registerform'
+import OrderSummary from '../../components/form/ordersummary'
 
 export default function Register() {
 	function writeUserData(person) {
@@ -27,6 +26,94 @@ export default function Register() {
 		})
 	}
 
+	const validateRegisteration = (data) => {
+		const strEmpty = 'Field can not be empty'
+		const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
+		const phoneRegex =
+			/(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/
+		let _error = {
+			firstname: '',
+			lastname: '',
+			gender: '',
+			age: '',
+			cnic: '',
+			phone: '',
+			socials: '',
+			sports: '',
+		}
+		let noError = true
+		if (!data.firstname) {
+			_error.firstname = strEmpty
+			noError = false
+		} else {
+			_error.firstname = ''
+		}
+		if (!data.lastname) {
+			_error.lastname = strEmpty
+			noError = false
+		} else {
+			_error.lastname = ''
+		}
+		if (!data.age) {
+			_error.age = strEmpty
+			noError = false
+		} else {
+			_error.age = ''
+		}
+		if (!data.gender) {
+			_error.gender = strEmpty
+			noError = false
+		} else {
+			_error.gender = ''
+		}
+		if (!data.socials) {
+			_error.socials = strEmpty
+			noError = false
+		} else {
+			_error.socials = ''
+		}
+		if (Object.keys(data.sports).length === 0) {
+			_error.sports = strEmpty
+			noError = false
+		} else {
+			_error.sports = ''
+		}
+
+		if (!data.phone) {
+			_error.phone = strEmpty
+			noError = false
+		} else if (phoneRegex.test(data.phone) == false) {
+			_error.phone = 'Invalid phone number'
+			noError = false
+		} else {
+			_error.phone = ''
+		}
+
+		if (!data.cnic) {
+			_error.cnic = strEmpty
+			noError = false
+		} else if (idRegex.test(data.cnic) == false) {
+			_error.cnic = 'Invalid cnic number'
+			noError = false
+		} else {
+			_error.cnic = ''
+		}
+
+		setErrors(_error)
+
+		return noError
+	}
+
+	const [errors, setErrors] = useState({
+		firstname: '',
+		lastname: '',
+		gender: '',
+		age: '',
+		cnic: '',
+		phone: '',
+		socials: '',
+		sports: '',
+	})
 	const navigate = useNavigate()
 	const [page, setpage] = useState(0)
 	const [personData, setPersonData] = useState({
@@ -48,7 +135,12 @@ export default function Register() {
 	]
 	let form = [
 		<RegisterWelcome />,
-		<RegisterPerson personData={personData} setPersonData={setPersonData} />,
+		<RegisterPerson
+			personData={personData}
+			setPersonData={setPersonData}
+			errors={errors}
+			setErrors={setErrors}
+		/>,
 		<OrderSummary personData={personData} setPersonData={setPersonData} />,
 		<RegisterEnd />,
 	]
@@ -57,7 +149,7 @@ export default function Register() {
 		<>
 			<div class="registersec">
 				<h1>Register</h1>
-				<h2>{formtitles[page]}</h2>
+				<h2 id="formtitles">{formtitles[page]}</h2>
 
 				<form method="post" to="#">
 					{form[page]}
@@ -79,14 +171,23 @@ export default function Register() {
 							id={page == 0 || page == 3 ? 'onlybutton' : ''}
 							onClick={(e) => {
 								e.preventDefault()
-								setpage((currpage) => currpage + 1)
-								if (page == 2) {
+								if (page == 1) {
+									//validate form
+									if (validateRegisteration(personData)) {
+										console.log('No erros!')
+										setpage((currpage) => currpage + 1)
+									} else {
+										console.log('error :(')
+									}
+								} else if (page == 2) {
 									// implement handing this data to database
 									console.log(JSON.stringify(personData))
 									writeUserData(personData)
-								}
-								if (page == 3) {
+									setpage((currpage) => currpage + 1)
+								} else if (page == 3) {
 									navigate('/')
+								} else {
+									setpage((currpage) => currpage + 1)
 								}
 							}}
 						>

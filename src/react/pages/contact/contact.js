@@ -1,17 +1,21 @@
+import { useState } from 'react'
+import { getDatabase, push, ref } from 'firebase/database'
+
 import './contact.css'
 
 export default function Contact() {
-	function writeUserData(contact) {
-		const db = getDatabase()
+	// function writeUserData(contact) {
+	// 	const db = getDatabase()
 
-		push(ref(db, 'issues/' + contact.email), {
-			personname: contact.name,
-			issue: contact.issue,
-		})
-	}
+	// 	push(ref(db, 'issues/'), {
+	// 		email: contact.email,
+	// 		personname: contact.personname,
+	// 		issue: contact.issue,
+	// 	})
+	// }
 
 	const [contactData, setContactData] = useState({
-		name: '',
+		personname: '',
 		email: '',
 		issue: '',
 	})
@@ -23,7 +27,7 @@ export default function Contact() {
 					<div>
 						<h1>Contact Us</h1>
 					</div>
-					<form method="post" action="#">
+					<form method="post" action="/">
 						<div className="inputcontainer">
 							<div className="forminput">
 								<label htmlFor="name">Name</label>
@@ -38,6 +42,7 @@ export default function Contact() {
 											personname: e.target.value,
 										})
 									}
+									required
 								/>
 							</div>
 							<div className="forminput">
@@ -53,6 +58,7 @@ export default function Contact() {
 											email: e.target.value,
 										})
 									}
+									required
 								/>
 							</div>
 						</div>
@@ -69,18 +75,19 @@ export default function Contact() {
 										issue: e.target.value,
 									})
 								}
+								required
 							/>
 						</div>
-						<div className="buttongroup">
-							<button
-								className="button-dark"
-								id="btn_submit"
-								onClick={writeUserData(contactData)}
-							>
-								Submit
-							</button>
-						</div>
 					</form>
+					<div className="buttongroup">
+						<button
+							className="button-dark"
+							id="btn_submit"
+							// onClick={writeUserData(contactData)}
+						>
+							Submit
+						</button>
+					</div>
 				</div>
 			</div>
 		</>

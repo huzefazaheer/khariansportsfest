@@ -1,21 +1,40 @@
 {
-  "hosting": {
-    "site": "khariansportsfest",
-    "public": "/dist/"
-  },
-  "emulators": {
-    "firestore": {
-      "port": 9000
-    },
-    "database": {
-      "port": 9900
-    },
-    "hosting": {
-      "port": 5000
-    },
-    "ui": {
-      "enabled": true
-    },
-    "singleProjectMode": true
-  }
+	"hosting": {
+		"site": "khariansportsfest",
+		"public": "/dist/",
+
+		"redirects": [
+			{
+				"source": "/register",
+				"destination": "/",
+				"type": 301
+			},
+			{
+				"source": "/contact",
+				"destination": "/",
+				"type": 301
+			},
+			{
+				"source": "/about",
+				"destination": "/",
+				"type": 301
+			}
+		]
+	},
+
+	"emulators": {
+		"firestore": {
+			"port": 9000
+		},
+		"database": {
+			"port": 9900
+		},
+		"hosting": {
+			"port": 5000
+		},
+		"ui": {
+			"enabled": true
+		},
+		"singleProjectMode": true
+	}
 }

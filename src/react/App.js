@@ -6,6 +6,7 @@ import Home from './pages/home/home'
 import Register from './pages/register/register'
 import Contact from './pages/contact/contact'
 import Team from './pages/team/team'
+import About from './pages/about/about'
 
 export default function App() {
 	return (
@@ -16,7 +17,7 @@ export default function App() {
 				<Route path="" element={<Home />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/contact" element={<Contact />} />
-				{/* <Route path="/about" element={<About />} /> */}
+				<Route path="/about" element={<About />} />
 				<Route path="/theteam" element={<Team />} />
 			</Routes>
 

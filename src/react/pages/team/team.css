@@ -1,3 +1,7 @@
+.teamsec {
+	background-color: var(--color-background);
+}
+
 .team {
 	padding: 50px 0;
 	height: 100vh;
@@ -21,16 +25,16 @@
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	font-weight: 700;
-	font-size: 48px;
 	text-transform: uppercase;
+	font-family: Cinzel, sans-serif;
+	font-weight: 400;
 }
 
 .row p {
 	margin: 20px 0 0;
 	color: black;
 	padding-left: 20px;
-	border-left: 5px solid red;
+	border-left: 5px solid var(--color-accent);
 }
 
 .row .coloumn {
@@ -81,7 +85,7 @@
 	left: 0;
 	padding: 10px;
 	box-sizing: border-box;
-	background: #232a23;
+	background: var(--color-accent);
 	width: 100%;
 	transition: 0.5s;
 	z-index: 2;

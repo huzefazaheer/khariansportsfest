@@ -5,6 +5,7 @@ import Footer from './components/footer/footer'
 import Home from './pages/home/home'
 import Register from './pages/register/register'
 import Contact from './pages/contact/contact'
+import Team from './pages/team/team'
 
 export default function App() {
 	return (
@@ -16,6 +17,7 @@ export default function App() {
 				<Route path="/register" element={<Register />} />
 				<Route path="/contact" element={<Contact />} />
 				{/* <Route path="/about" element={<About />} /> */}
+				<Route path="/theteam" element={<Team />} />
 			</Routes>
 
 			<Footer />

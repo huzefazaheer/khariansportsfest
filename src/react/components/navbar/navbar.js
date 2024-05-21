@@ -29,7 +29,7 @@ export default function NavigationBar() {
 				</div>
 				<ul className="menu" id={menuOpen ? 'active' : ''}>
 					<li>
-						<Link to="#" className="futura">
+						<Link to="/theteam" className="futura">
 							The Team
 						</Link>
 					</li>

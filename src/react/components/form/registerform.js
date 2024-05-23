@@ -141,7 +141,7 @@ export default function RegisterPerson({
 					</div>
 				</div>
 				<div className="inputcontainer">
-					<div className="forminput gender">
+					<div className="forminput dropdown">
 						<label htmlFor="gender">Gender</label>
 						<Select
 							id="gender"
@@ -203,36 +203,45 @@ export default function RegisterPerson({
 					</div>
 				</div>
 				<div className="inputcontainer">
-					<label htmlFor="socialsincluded">Do you want socials included?</label>
-					<Select
-						id="socialsincluded"
-						className="react-select-container"
-						classNamePrefix="react-select"
-						options={socialsoptions}
-						value={personData.socials}
-						onChange={(value) => {
-							setPersonData({ ...personData, socials: value })
-							// validateRegisteration(personData, 'socials')
-						}}
-					/>
-					<p className="error">{errors.socials}</p>
+					<label className="speciallabel" htmlFor="socialsincluded">
+						Do you want socials included?
+					</label>
+					<div>
+						<Select
+							id="socialsincluded"
+							className="react-select-container"
+							classNamePrefix="react-select"
+							options={socialsoptions}
+							value={personData.socials}
+							onChange={(value) => {
+								setPersonData({ ...personData, socials: value })
+								// validateRegisteration(personData, 'socials')
+							}}
+						/>
+						<p className="error special">{errors.socials}</p>
+					</div>
 				</div>
 				<div className="inputcontainer">
-					<label for="sports">Choose sports</label>
+					<label className="speciallabel" for="sports">
+						Choose sports
+					</label>
 
-					<Select
-						id="sports"
-						className="react-select-container"
-						classNamePrefix="react-select"
-						options={options}
-						value={personData.sports}
-						onChange={(selectedOption) => {
-							setPersonData({ ...personData, sports: selectedOption })
-							// validateRegisteration(personData, 'sports')
-						}}
-						isMulti={true}
-					/>
-					<p className="error">{errors.sports}</p>
+					<div>
+						<Select
+							id="sports"
+							className="react-select-container"
+							classNamePrefix="react-select"
+							options={options}
+							value={personData.sports}
+							onChange={(selectedOption) => {
+								setPersonData({ ...personData, sports: selectedOption })
+								// validateRegisteration(personData, 'sports')
+							}}
+							isMulti={true}
+						/>
+
+						<p className="error special">{errors.sports}</p>
+					</div>
 				</div>
 				{/* </form> */}
 			</div>

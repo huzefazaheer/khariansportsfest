@@ -19,15 +19,66 @@ export default function OrderSummary({ personData, setPersonData }) {
 	return (
 		<>
 			<div className="formcontainer">
-				<p>
-					Name: {personData.firstname} {personData.lastname}
-				</p>
-				<p>Gender: {personData.gender.label}</p>
-				<p>Age: {personData.age}</p>
-				<p>CNIC: {personData.cnic}</p>
-				<p>Socials included: {personData.socials.label}</p>
-				<p>Games: {sportslist}</p>
-
+				<tbody>
+					<tr>
+						<td>
+							<p>Name:</p>
+						</td>
+						<td>
+							<p>
+								{personData.firstname} {personData.lastname}
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Gender:</p>
+						</td>
+						<td>
+							<p>{personData.gender.label}</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Age:</p>
+						</td>
+						<td>
+							<p>{personData.age}</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>CNIC:</p>
+						</td>
+						<td>
+							<p>{personData.cnic}</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Phone number:</p>
+						</td>
+						<td>
+							<p>{personData.phone}</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Socials included:</p>
+						</td>
+						<td>
+							<p>{personData.socials.label}</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Games:</p>
+						</td>
+						<td>
+							<p>{sportslist}</p>
+						</td>
+					</tr>
+				</tbody>
 				<h5>Your total is: {calculateTotal()}</h5>
 			</div>
 		</>

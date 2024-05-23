@@ -1,0 +1,153 @@
+.teamsec {
+	background-color: var(--color-background);
+}
+
+.team {
+	padding: 50px 0;
+	height: 100vh;
+	box-sizing: border-box;
+}
+
+.teamcontainer {
+	width: 80%;
+	margin: 50px auto;
+}
+
+.row {
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 50px;
+}
+
+.row h1 {
+	color: black;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: Cinzel, sans-serif;
+	font-weight: 400;
+}
+
+.row p {
+	margin: 20px 0 0;
+	color: black;
+	padding-left: 20px;
+	border-left: 5px solid var(--color-accent);
+}
+
+.row .coloumn {
+	margin: 0 10px;
+	position: relative;
+	width: calc(25% - 20px);
+	min-height: 250px;
+	/* background: #fff; */
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.row .coloumn::before {
+	content: '';
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #357444;
+	z-index: 1;
+	transition: 0.5s;
+	mix-blend-mode: soft-light;
+}
+
+.row .coloumn:hover:before {
+	bottom: 0%;
+}
+
+.row .coloumn .imgbox {
+	position: relative;
+}
+
+.row .coloumn .imgbox img {
+	width: 100%;
+	transition: 1s;
+	height: 286px;
+}
+
+.row .coloumn:hover .imgbox img {
+	transform: scale(1.15);
+}
+
+.row .coloumn .details {
+	position: absolute;
+	bottom: -85px;
+	left: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	background: var(--color-accent);
+	width: 100%;
+	transition: 0.5s;
+	z-index: 2;
+}
+
+.row .coloumn:hover .details {
+	bottom: 0;
+}
+
+.row .coloumn .details h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-weight: 500;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.row .coloumn .details h3 span {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	color: #6fafaf;
+	font-weight: 900;
+	text-transform: uppercase;
+	position: relative;
+	top: -6px;
+}
+
+.row .coloumn .details ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	float: right;
+}
+
+@media (max-width: 992px) {
+	.teamcontainer {
+		width: 90%;
+		margin: 20px auto;
+	}
+
+	.row .coloumn {
+		width: calc(50% - 20px);
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+	.teamcontainer {
+		width: 95%;
+		margin: 20px auto;
+	}
+
+	.row .coloumn {
+		width: calc(100% - 20px);
+		margin-bottom: 20px;
+	}
+}
+
+.imgg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

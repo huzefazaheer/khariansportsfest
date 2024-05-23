@@ -42,13 +42,13 @@ export default function Footer() {
 									<h4>The Team</h4>
 								</li>
 								<li>
-									<a href="#">Director</a>
+									<a href="#">Event Directors</a>
 								</li>
 								<li>
-									<a href="#">Asst. Director</a>
+									<a href="#">Directorate</a>
 								</li>
 								<li>
-									<a href="#">Event Head</a>
+									<a href="#">Game Heads</a>
 								</li>
 							</ul>
 						</div>

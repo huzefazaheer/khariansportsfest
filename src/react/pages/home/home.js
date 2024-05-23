@@ -25,8 +25,9 @@ function Hero() {
 					</p>
 				</div>
 				<p className="hero-subtext">
-					Sed sit amet lectus bibendum, sodales ipsum et, ullamcorper ex.
-					Curabitur gravida, est in maximus condimentum, urna nunc varius nisl.
+					Igniting passion and camaraderie with electrifying and extraordinary
+					athleticism. Join us for an unforgettable experience to compete
+					against the best.
 				</p>
 				<div className="hero-buttons">
 					<Link to="/about" className="button-alternative">
@@ -48,7 +49,7 @@ function CallToAction() {
 				<div className="left">
 					<h3 className="futura-lt">Don’t miss it.</h3>
 					<p className="futura date">
-						Last date to register is <span className="date">12/24/1947</span>
+						Last date to register is <span className="date">26/6/2024</span>
 					</p>
 					<Link to="/register" className="button-light">
 						Register Now

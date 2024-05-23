@@ -29,8 +29,7 @@ export default function Register() {
 	const validateRegisteration = (data) => {
 		const strEmpty = 'Field can not be empty'
 		const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
-		const phoneRegex =
-			/(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/
+		const phoneRegex = /([+]?\d{1,2}[-\s]?|)\d{3}[-\s]?\d{3}[-\s]?\d{4}$/
 		let _error = {
 			firstname: '',
 			lastname: '',
@@ -59,6 +58,10 @@ export default function Register() {
 			noError = false
 		} else if (data.age < 6) {
 			_error.age = 'Age can not be less than 6'
+			noError = false
+		} else if (data.age > 50) {
+			_error.age = 'Age can not be more than 50'
+			noError = false
 		} else {
 			_error.age = ''
 		}
@@ -74,8 +77,11 @@ export default function Register() {
 		} else {
 			_error.socials = ''
 		}
-		if (Object.keys(data.sports).length === 0) {
-			_error.sports = strEmpty
+		if (Object.keys(data.sports).length === 0 && data.socials.label == 'No') {
+			_error.sports = 'You must choose atleast one sport or socials'
+			noError = false
+		} else if (Object.keys(data.sports).length > 3) {
+			_error.sports = 'You can only choose three sports max'
 			noError = false
 		} else {
 			_error.sports = ''
@@ -176,10 +182,10 @@ export default function Register() {
 								if (page == 1) {
 									//validate form
 									if (validateRegisteration(personData)) {
-										console.log('No erros!')
+										console.log('Valid response')
 										setpage((currpage) => currpage + 1)
 									} else {
-										console.log('error :(')
+										console.log('Invalid response')
 									}
 								} else if (page == 2) {
 									// implement handing this data to database
@@ -206,10 +212,15 @@ function RegisterWelcome() {
 	return (
 		<>
 			<div className="formcontainer">
-				<h4>Please keep your id documents at hand</h4>
-				<p>
-					CNIC (if above 18) <br /> B Form (if under age)
-				</p>
+				<h4>Please keep the following id documents at hand</h4>
+				<ul>
+					<li>
+						<p>CNIC (if above 18)</p>
+					</li>
+					<li>
+						<p>B Form (if under age)</p>
+					</li>
+				</ul>
 
 				{/* <div class="forminput">
 					<label for="name">

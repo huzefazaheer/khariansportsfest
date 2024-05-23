@@ -1,5 +1,5 @@
 .formcontainer {
-	padding-top: 10vh;
+	padding-top: 6vh;
 	background-color: var(--color-background);
 	/* max-width: 60vw; */
 }
@@ -35,6 +35,7 @@ input:not([type='button']) {
 	border: var(--color-secondary) 1px solid;
 	padding: 1vh 0.5vw;
 	width: 40vw;
+	height: 38px;
 }
 
 button {
@@ -68,10 +69,11 @@ h5 {
 	font-size: 1rem;
 	font-family: Futura-MD, sans-serif;
 	font-weight: 200;
+	margin-top: 6vh;
 }
 
 #formtitles {
-	margin-top: 8vh;
+	margin-top: 16vh;
 	font-family: Futura;
 }
 
@@ -94,10 +96,28 @@ h5 {
 	color: rgb(196, 7, 7);
 	font-family: Futura-LT, serif;
 	font-size: 0.9rem;
+	width: 100%;
+	height: 1rem;
+}
+
+.dropdown > * {
+	width: 40vw;
+}
+
+.special {
+	margin-top: 1vh;
+}
+
+.speciallabel {
+	margin-top: 1.5vh;
 }
 
 /* Form for mobile screens */
 @media (max-width: 600px) {
+	#formtitles {
+		margin-top: 8vh;
+	}
+
 	.formcontainer {
 		padding-top: 2vh;
 		margin: 0 2rem;
@@ -143,32 +163,43 @@ h5 {
 	}
 
 	.inputcontainer {
-		margin-top: 3vh;
+		margin-top: 2vh;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.gender {
+	.dropdown {
 		justify-content: flex-start;
 	}
 
-	.gender > * {
+	.dropdown > * {
 		width: 80vw;
 	}
 }
-
 /* Css for react select */
 
 .react-select-container {
 	color: var(--color-secondary);
 	background-color: #ffffff00;
 	border: var(--color-secondary) 1px solid;
-	border-radius: 4px;
+	border-radius: 0px;
 }
 
 .react-select__control {
 	background-color: #ffffff00 !important;
 	border-radius: 0px;
+	min-height: 38px;
+	height: 38px;
+	border: none !important;
+}
+
+.react-select__control--is-focused {
+	border: 2px !important;
+	border-radius: 0px !important;
+}
+
+.react-select__control:focus {
+	border: 3px solid var(--color-accent);
 }
 
 .react-select__menu {
@@ -187,6 +218,11 @@ h5 {
 	font-size: 1rem;
 }
 
+.react-select__input-container {
+	padding: 0 !important;
+	margin: -10px !important;
+}
+
 .react-select__option:hover,
 .react-select__option:enabled,
 .react-select__option--is-focused {
@@ -198,11 +234,40 @@ h5 {
 }
 
 .react-select__multi-value__remove:hover {
-	background-color: var(--color-secondary) !important;
+	background-color: var(--color-accent) !important;
 	color: var(--color-background) !important;
 }
 
 .react-select__value-container {
 	font-family: Futura;
 	font-size: 1rem;
+	height: 38px;
+}
+
+.react-select__indicators-container {
+	height: 38px;
+}
+
+tr:nth-child(odd) {
+	background-color: #fff1dc;
+}
+tr:nth-child(even) {
+	background-color: #fffaf1;
+}
+
+td:first-child {
+	padding: 0.3rem 30vw 0.3rem 0rem;
+}
+
+td:last-child {
+	padding: 0rem 0rem 0rem 0.3rem;
+}
+
+td > p {
+	color: #242424;
+	padding: 0 0.5rem;
+}
+
+tbody {
+	/* display: unset; */
 }

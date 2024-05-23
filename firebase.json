@@ -19,6 +19,11 @@
 				"destination": "/",
 				"type": 301
 			}
+			{
+				"source": "/theteam",
+				"destination": "/",
+				"type": 301
+			}
 		]
 	},
 

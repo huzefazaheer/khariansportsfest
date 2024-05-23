@@ -72,15 +72,15 @@ section {
 	font-weight: bold;
 	padding: 12px;
 }
-ul {
+.aboutsec ul {
 	padding: 32px;
 	list-style: square;
 	font-size: 20px;
 }
-ul li {
+.aboutsec ul li {
 	padding: 3px;
 }
-ul li:hover {
+.aboutsec ul li:hover {
 	text-decoration: underline;
 }
 

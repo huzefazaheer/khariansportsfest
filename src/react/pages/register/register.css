@@ -231,6 +231,7 @@ h5 {
 
 .react-select__multi-value {
 	background-color: var(--color-primary) !important;
+	margin: 2px 3% 2px 2px !important;
 }
 
 .react-select__multi-value__remove:hover {

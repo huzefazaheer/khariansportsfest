@@ -14,80 +14,41 @@ export default function Contact() {
 	// 	})
 	// }
 
-	const [contactData, setContactData] = useState({
-		personname: '',
-		email: '',
-		issue: '',
-	})
-
 	return (
 		<>
 			<div className="contactsec">
 				<div>
 					<h1>Contact Us</h1>
 				</div>
-				<form method="post" action="/">
+				<form method="POST" action="https://api.web3forms.com/submit">
+					<input
+						type="hidden"
+						name="access_key"
+						value="2f05312f-ac65-4a57-abc2-91182e9a9855"
+					></input>
 					<div className="inputcontainer">
 						<div className="forminput">
 							<label htmlFor="name">Name</label>
-							<input
-								type="text"
-								name="name"
-								id="name"
-								value={contactData.name}
-								onChange={(e) =>
-									setContactData({
-										...contactData,
-										personname: e.target.value,
-									})
-								}
-								required
-							/>
+							<input type="text" name="name" id="name" required />
 						</div>
 						<div className="forminput">
 							<label htmlFor="email">Email Address</label>
-							<input
-								type="email"
-								name="email"
-								id="email"
-								value={contactData.email}
-								onChange={(e) =>
-									setContactData({
-										...contactData,
-										email: e.target.value,
-									})
-								}
-								required
-							/>
+							<input type="email" name="email" id="email" required />
 						</div>
 					</div>
 					<div className="forminput textareainput">
-						<label htmlFor="issue">What would you like help with?</label>
-						<textarea
-							name="issue"
-							id="issue"
-							defaultValue={''}
-							value={contactData.issue}
-							onChange={(e) =>
-								setContactData({
-									...contactData,
-									issue: e.target.value,
-								})
-							}
-							required
-						/>
+						<label htmlFor="issue">How can we help?</label>
+						<textarea name="issue" id="issue" required />
+					</div>
+					<div class="h-captcha" data-captcha="true"></div>
+					<div className="buttongroup">
+						<input type="submit" className="button-dark" id="btn_submit">
+							Submit
+						</input>
 					</div>
 				</form>
-				<div className="buttongroup">
-					<button
-						className="button-dark"
-						id="btn_submit"
-						// onClick={writeUserData(contactData)}
-					>
-						Submit
-					</button>
-				</div>
 			</div>
+			<script src="https://web3forms.com/client/script.js" async defer></script>
 		</>
 	)
 }

@@ -7,25 +7,19 @@ export default function About() {
 				<div className="wrapper">
 					<div className="textss">
 						<article>
-							<h1>About Us</h1>
+							<h1 className="after">About Us</h1>
 							<img src="resources/logo.webp" alt="ksf logo" />
 							<div className="texttwo">
-								{/* could write Our Dedicated Directors were once sitting on a beach and the idea to host a sports event clicked one of em mind. thats how KSF was born. */}
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-								Sapiente maxime id eveniet, harum quo dicta perspiciatis
-								voluptate corporis neque cum minus temporibus, excepturi debitis
-								adipisci dignissimos incidunt porro nobis asperiores.
+								9 games, 3 days, 1 winner. Do you have what it takes to compete
+								against the best from the district and prove yourself.
 							</div>
-							<h5>KSF</h5>
 							<p>
-								{/* Could write. We are hosting this even on 26th of june we have alot of stuff to do if u want to learn more about what we are offering you click ahref here */}
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui a
-								deleniti perspiciatis doloribus quaerat placeat! Dignissimos nam
-								a eaque ex deleniti minima ea maxime dolorum officiis aliquam?
-								Modi magni magnam architecto veniam labore veritatis
-								accusantium! Ipsum accusamus cupiditate, culpa ipsam porro
-								perferendis impedit doloremque dicta!
+								The Kharian Sports Fest is an annual celebration of atheletic
+								excellence, showcasing thrilling competitions and extraordinary
+								talent. It's a vibrant event that highlights sportsmanship and
+								work to bring the community together
 							</p>
+							<h1 className="twooo">Summer '24</h1>
 						</article>
 					</div>
 				</div>

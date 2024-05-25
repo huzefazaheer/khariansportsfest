@@ -67,10 +67,11 @@
 	transition: 1s;
 	height: 25rem;
 	aspect-ratio: 3/4;
-	background-image: url('../../../resources/stock.webp');
+	background-image: url('../../../resources/stock.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: 12rem;
 }
 
 .row .coloumn:hover .imgbox img {
@@ -129,18 +130,6 @@
 	float: right;
 }
 
-/* @media (max-width: 992px) {
-	.teamsec .teamcontainer {
-		width: 90%;
-		margin: 20px auto;
-	}
-
-	.teamsec .row .coloumn {
-		width: calc(50% - 20px);
-		margin-bottom: 20px;
-	}
-} */
-
 @media (max-width: 600px) {
 	.teamsec .teamcontainer {
 		/* width: 95%; */
@@ -160,6 +149,15 @@
 
 	.row .coloumn .details h3 {
 		margin-top: 0;
+	}
+
+	.row .coloumn .imgbox img {
+		height: 20rem;
+	}
+
+	.row .coloumn .imgbox {
+		display: flex;
+		justify-content: center;
 	}
 }
 

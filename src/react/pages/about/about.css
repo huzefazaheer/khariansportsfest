@@ -12,9 +12,6 @@
 	padding: 30px 100px;
 }
 article h1 {
-	font-size: 50px;
-	font-weight: 800;
-	text-transform: uppercase;
 	color: #fff6e9;
 }
 
@@ -53,6 +50,7 @@ article h5 {
 article p {
 	color: white;
 	font-size: 17px;
+	font-family: Futura, serif;
 }
 
 section {

@@ -7,6 +7,7 @@
 .teamcontainer {
 	width: 80%;
 	margin: 50px auto;
+	margin-top: -6vh;
 }
 
 .row {
@@ -35,9 +36,7 @@
 .teamsec .row .coloumn {
 	margin: 0 10px;
 	position: relative;
-	width: calc(25% - 20px);
 	min-height: 250px;
-	/* background: #fff; */
 	float: left;
 	box-sizing: border-box;
 	overflow: hidden;
@@ -65,9 +64,13 @@
 }
 
 .row .coloumn .imgbox img {
-	width: 100%;
 	transition: 1s;
-	height: 286px;
+	height: 25rem;
+	aspect-ratio: 3/4;
+	background-image: url('../../../resources/stock.webp');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .row .coloumn:hover .imgbox img {

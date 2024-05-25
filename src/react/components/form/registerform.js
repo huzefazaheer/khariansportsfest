@@ -32,6 +32,15 @@ export default function RegisterPerson({
 	errors,
 	setErrors,
 }) {
+	function setSportsDetail(sports) {
+		switch (sports) {
+			case 'tabletennis':
+				return <sportDetails sport="tabletennis" agegroup="old" type="snigle" />
+				s
+			default:
+				break
+		}
+	}
 	// const validateRegisteration = (data, field) => {
 	// 	const strEmpty = 'Field can not be empty'
 	// 	const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
@@ -236,6 +245,7 @@ export default function RegisterPerson({
 							onChange={(selectedOption) => {
 								setPersonData({ ...personData, sports: selectedOption })
 								// validateRegisteration(personData, 'sports')
+								setSportsDetail('tabletennis')
 							}}
 							isMulti={true}
 						/>
@@ -245,6 +255,18 @@ export default function RegisterPerson({
 				</div>
 				{/* </form> */}
 			</div>
+		</>
+	)
+}
+
+function sportDetails({ sport, type, agegroup }) {
+	return (
+		<>
+			<ul>
+				<li>sport</li>
+				<li>type</li>
+				<li>agegroup</li>
+			</ul>
 		</>
 	)
 }

@@ -8,7 +8,7 @@ export default function About() {
 					<div className="textss">
 						<article>
 							<h1>About Us</h1>
-							<img src="resources/logo.webp" alt="" />
+							<img src="resources/logo.webp" alt="ksf logo" />
 							<div className="texttwo">
 								{/* could write Our Dedicated Directors were once sitting on a beach and the idea to host a sports event clicked one of em mind. thats how KSF was born. */}
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit.

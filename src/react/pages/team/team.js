@@ -19,21 +19,21 @@ export default function Team() {
 					<div className="row imgrow">
 						<Personimg
 							imgsrc={
-								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/ahsan.jpg?alt=media&token=20435fdf-b580-4382-91ba-0b607197bc8f'
+								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/ahsan.jpeg?alt=media&token=f1998074-02ff-4242-b49e-a37f52f7fe7d'
 							}
 							name={'Ahsan Raza'}
 							title={'Director KSF'}
 						/>
 						<Personimg
 							imgsrc={
-								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/hamza.jpg?alt=media&token=d9557e83-c557-4edd-a197-577871f85e64'
+								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/hamza.jpeg?alt=media&token=53506b8d-b2f5-4227-8ce0-93016d9e2f08'
 							}
 							name={'Hamza Ahmed Noor'}
 							title={'Director KSF'}
 						/>
 						<Personimg
 							imgsrc={
-								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/moiz.jpg?alt=media&token=1a8c134c-1c38-4631-81a3-aed1edae869b'
+								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/moiz.jpeg?alt=media&token=ef5c64f9-60c9-4c14-8ab7-40d50b264376'
 							}
 							name={'Moiz Akhtar'}
 							title={'Director KSF'}
@@ -83,7 +83,7 @@ function Personimg({ imgsrc, name, title }) {
 		<>
 			<div className="coloumn">
 				<div className="imgbox">
-					<img src={imgsrc} alt="picture of person" />
+					<img src={imgsrc} />
 				</div>
 				<div className="details">
 					<h3>

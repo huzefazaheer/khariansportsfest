@@ -219,7 +219,7 @@ h1 {
 		display: block;
 	}
 
-	h3 {
+	.calltoaction-sec h3 {
 		font-size: 2rem;
 		margin-top: 2vh;
 	}

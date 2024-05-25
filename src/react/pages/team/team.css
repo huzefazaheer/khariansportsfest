@@ -84,7 +84,7 @@
 	padding: 10px;
 	box-sizing: border-box;
 	background: var(--color-accent);
-	width: 100%;
+	width: 18.75rem;
 	transition: 0.5s;
 	z-index: 2;
 }
@@ -99,7 +99,8 @@
 	color: #fff;
 	font-weight: 500;
 	text-align: right;
-	text-transform: uppercase;
+	font-size: 1.5rem;
+	font-family: Futura-MD;
 }
 
 .imgrow {
@@ -110,12 +111,13 @@
 .row .coloumn .details h3 .title {
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
+	font-size: 1rem;
 	color: #6fafaf;
 	font-weight: 900;
 	text-transform: uppercase;
 	position: relative;
 	top: -6px;
+	font-family: Futura-LT, serif;
 }
 
 .teamsec .row .coloumn .details ul {
@@ -125,7 +127,7 @@
 	float: right;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
 	.teamsec .teamcontainer {
 		width: 90%;
 		margin: 20px auto;
@@ -135,17 +137,27 @@
 		width: calc(50% - 20px);
 		margin-bottom: 20px;
 	}
-}
+} */
 
 @media (max-width: 600px) {
 	.teamsec .teamcontainer {
-		width: 95%;
+		/* width: 95%; */
 		margin: 20px auto;
 	}
 
 	.teamsec .row .coloumn {
-		width: calc(100% - 20px);
+		/* width: calc(100% - 20px); */
 		margin-bottom: 20px;
+	}
+
+	.imgrow {
+		display: flex;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+
+	.row .coloumn .details h3 {
+		margin-top: 0;
 	}
 }
 

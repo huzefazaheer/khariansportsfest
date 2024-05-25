@@ -14,7 +14,7 @@
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
-	margin-top: 50px;
+	margin-top: 10vh;
 }
 
 .row h1 {
@@ -105,7 +105,9 @@
 
 .imgrow {
 	display: flex;
-	justify-content: space-around;
+	column-gap: 1rem;
+	width: 80vw;
+	justify-content: center;
 }
 
 .row .coloumn .details h3 .title {

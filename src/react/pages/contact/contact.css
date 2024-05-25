@@ -18,6 +18,12 @@ textarea {
 	height: 20vh;
 }
 
+.resulttxt {
+	font-family: Futura-LT;
+	text-align: center;
+	margin-top: 8vh;
+}
+
 .textareainput {
 	display: flex;
 	justify-content: center;

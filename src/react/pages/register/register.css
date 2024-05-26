@@ -97,10 +97,6 @@ h5 {
 	font-family: Futura;
 }
 
-#hiddeninput {
-	display: none;
-}
-
 .registersec p {
 	font-family: Futura, sans-serif;
 }
@@ -113,7 +109,7 @@ h5 {
 }
 
 #disabled {
-	display: none;
+	display: none !important;
 }
 
 .error {

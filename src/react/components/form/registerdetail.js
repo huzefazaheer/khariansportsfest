@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Select from 'react-select'
 
 export default function RegisterDetail({ personData, setPersonData, errors }) {
@@ -201,7 +202,7 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 		{ value: 'fifa', label: 'FIFA' },
 		{ value: 'pubg', label: 'Pubg' },
 	]
-
+	const [gamelist, setgamelist] = useState([])
 	return (
 		<div className="inputcontainer detailcontainer">
 			<label htmlFor="socialsincluded">Egames</label>
@@ -217,9 +218,17 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 					let newpersondata = personData.sports
 					newpersondata[index].games = event
 					setPersonData({ ...personData, sports: newpersondata })
+					let _gamelist = []
+					personData.sports[index].games.forEach((item) =>
+						_gamelist.push(item.value)
+					)
+					setgamelist(_gamelist)
 				}}
 			/>
-			<div className="forminput detailform">
+			<div
+				className="forminput detailform"
+				id={gamelist.includes('pubg') ? '' : 'disabled'}
+			>
 				<label htmlFor="teamname">Team Name</label>
 				<input
 					type="text"
@@ -283,7 +292,18 @@ function TeamTypeInput({
 				}}
 			/>
 
-			<div className="forminput detailform">
+			<div
+				className="forminput detailform"
+				id={
+					personData.sports[index].gametype != undefined
+						? personData.sports[index].gametype == ''
+							? 'disabled'
+							: personData.sports[index].gametype.value == 'one'
+							? 'disabled'
+							: ''
+						: 'disabled'
+				}
+			>
 				<label htmlFor="teamname">Team Name</label>
 				<input
 					type="text"

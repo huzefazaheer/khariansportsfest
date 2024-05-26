@@ -177,7 +177,10 @@ export default function Register() {
 			if (egamesRef.games.length == 0) {
 				_error.egames = 'You have to select atleast one game'
 				noError = false
-			} else if (!egamesRef.teamname) {
+			} else if (
+				!egamesRef.teamname &&
+				Object.entries(personData.sports[index].games).includes('pubg')
+			) {
 				_error.egames = strEmpty
 				noError = false
 			} else {
@@ -187,14 +190,17 @@ export default function Register() {
 
 		if (sportslist.includes('badminton')) {
 			const badmintonRef = data.sports[_pointers.badminton]
-			if (!badmintonRef.teamname) {
+			if (!badmintonRef.gametype) {
+				_error.badminton = 'Must choose either singles or doubles'
+				noError = false
+			} else if (
+				!badmintonRef.teamname &&
+				badmintonRef.gametype.value == 'two'
+			) {
 				_error.badminton = strEmpty
 				noError = false
 			} else if (!badmintonRef.agegroup) {
 				_error.badminton = strNoAge
-				noError = false
-			} else if (!badmintonRef.gametype) {
-				_error.badminton = 'Must choose either singles or doubles'
 				noError = false
 			} else {
 				_error.badminton = ''
@@ -203,14 +209,17 @@ export default function Register() {
 
 		if (sportslist.includes('tabletennis')) {
 			const tabletennisRef = data.sports[_pointers.tabletennis]
-			if (!tabletennisRef.teamname) {
+			if (!tabletennisRef.gametype) {
+				_error.tabletennis = 'Must choose either singles or doubles'
+				noError = false
+			} else if (
+				!tabletennisRef.teamname &&
+				tabletennisRef.gametype.value == 'two'
+			) {
 				_error.tabletennis = strEmpty
 				noError = false
 			} else if (!tabletennisRef.agegroup) {
 				_error.tabletennis = strNoAge
-				noError = false
-			} else if (!tabletennisRef.gametype) {
-				_error.tabletennis = 'Must choose either singles or doubles'
 				noError = false
 			} else {
 				_error.tabletennis = ''

@@ -12,9 +12,31 @@ export default function Register() {
 	async function writeUserData(person) {
 		const db = getDatabase()
 		const firestoredb = getFirestore()
-		let sportslist = []
+		let sportslist = [{}]
 		for (let i = 0; i < personData.sports.length; i++) {
-			sportslist.push(personData.sports[i].value)
+			let _game = {
+				name: null,
+				teamname: null,
+				agegroup: null,
+				gametype: null,
+				gameslist: [],
+			}
+			_game.name = personData.sports[i].value
+			if (personData.sports[i].teamname) {
+				_game.teamname = personData.sports[i].teamname
+			}
+			if (personData.sports[i].agegroup) {
+				_game.agegroup = personData.sports[i].agegroup.value
+			}
+			if (personData.sports[i].gametype) {
+				_game.gametype = personData.sports[i].gametype.value
+			}
+			if (personData.sports[i].games) {
+				for (let x = 0; x < personData.sports[i].games.length; x++) {
+					_game.gameslist.push(personData.sports[i].games[x].value)
+				}
+			}
+			sportslist.push(_game)
 		}
 
 		push(ref(db, 'participants/' + person.cnic), {

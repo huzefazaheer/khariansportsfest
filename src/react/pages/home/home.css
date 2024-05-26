@@ -109,10 +109,11 @@
 	align-items: center;
 }
 
-.location-sec img {
+.location-sec iframe {
 	width: 500px;
 	height: 500px;
 	margin-top: 4vh;
+	border: 2px solid var(--color-secondary);
 }
 
 #address {

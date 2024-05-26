@@ -69,7 +69,12 @@ function Location() {
 					Garrison Academy <br />
 					Kharian Cantt
 				</h1>
-				<img src="resources/location.webp" alt="location of gak" />
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.711546463469!2d73.88316565064592!3d32.79595322783623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391fa1a84b06ee73%3A0xb778b46716848759!2sAPS%26C%20Garrison%20Academy%20Kharian%20Cantt%20Campus!5e0!3m2!1sen!2s!4v1716766690042!5m2!1sen!2s"
+					allowfullscreen="false"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+				></iframe>
 				<p id="address">Abrar Colony, Kharian Cantt, Kharian, Gujrat, Punjab</p>
 			</div>
 		</>

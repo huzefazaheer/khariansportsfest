@@ -15,7 +15,7 @@ export default function RegisterDetail({ personData, setPersonData, errors }) {
 	let cricketindex = 0
 	let egames = false
 	let egamesindex = 0
-	if (personData != undefined) {
+	if (personData.sports != undefined) {
 		for (let i = 0; i < personData.sports.length; i++) {
 			switch (personData.sports[i].value) {
 				case 'badminton':
@@ -97,6 +97,7 @@ export default function RegisterDetail({ personData, setPersonData, errors }) {
 					<EgamesInput
 						errorname={errors.egames}
 						index={egamesindex}
+						personData={personData}
 						setPersonData={setPersonData}
 					/>
 				) : (
@@ -171,10 +172,10 @@ function TeamNameInput({
 				classNamePrefix="react-select"
 				defaultValue={personData.age > 16 ? ageoptions[0] : ageoptions[1]}
 				options={ageoptions}
-				onChange={(value) => {
-					let newpersondata = personData
-					newpersondata.sports[index].agegroup = event.target.value
-					setPersonData({ ...personData, newpersondata })
+				onChange={(event) => {
+					let newpersondata = personData.sports
+					newpersondata[index].agegroup = event
+					setPersonData({ ...personData, sports: newpersondata })
 				}}
 			/>
 			<div className="forminput">
@@ -185,9 +186,9 @@ function TeamNameInput({
 					id="teamname"
 					value={personData.sports[index].teamname}
 					onChange={(event) => {
-						let newpersondata = personData
-						newpersondata.sports[index].teamname = event.target.value
-						setPersonData({ ...personData, newpersondata })
+						let newpersondata = personData.sports
+						newpersondata[index].teamname = event.target.value
+						setPersonData({ ...personData, sports: newpersondata })
 					}}
 					required
 				/>
@@ -197,7 +198,7 @@ function TeamNameInput({
 	)
 }
 
-function EgamesInput({ errorname, index, setPersonData }) {
+function EgamesInput({ errorname, index, setPersonData, personData }) {
 	const egamesoptions = [
 		{ value: 'tekken', label: 'Tekken' },
 		{ value: 'fifa', label: 'FIFA' },
@@ -215,11 +216,12 @@ function EgamesInput({ errorname, index, setPersonData }) {
 				className="react-select-container"
 				classNamePrefix="react-select"
 				options={egamesoptions}
-				value={newpersondata.sports[index].games}
+				value={personData.sports[index].games}
+				isMulti={true}
 				onChange={(event) => {
-					let newpersondata = personData
-					newpersondata.sports[index].games.push(event.target.value)
-					setPersonData({ ...personData, newpersondata })
+					let newpersondata = personData.sports
+					newpersondata[index].games = event
+					setPersonData({ ...personData, sports: newpersondata })
 				}}
 			/>
 			<div id="hiddeninput" className="forminput">
@@ -228,10 +230,11 @@ function EgamesInput({ errorname, index, setPersonData }) {
 					type="text"
 					name="lastname"
 					id="namelast"
+					value={personData.sports[index].teamname}
 					onChange={(event) => {
-						let newpersondata = personData
-						newpersondata.sports[index].teamname = event.target.value
-						setPersonData({ ...personData, newpersondata })
+						let newpersondata = personData.sports
+						newpersondata[index].teamname = event.target.value
+						setPersonData({ ...personData, sports: newpersondata })
 					}}
 					required
 				/>
@@ -247,6 +250,7 @@ function TeamTypeInput({
 	personData,
 	errorname,
 	setPersonData,
+	index,
 }) {
 	const gametypeoptions = [
 		{ value: 'one', label: 'Singles' },
@@ -266,11 +270,11 @@ function TeamTypeInput({
 				className="react-select-container selectttt"
 				classNamePrefix="react-select"
 				options={ageoptions}
-				value={newpersondata.sports[index].agegroup}
+				value={personData.sports[index].agegroup}
 				onChange={(event) => {
-					let newpersondata = personData
-					newpersondata.sports[index].agegroup = event.target.value
-					setPersonData({ ...personData, newpersondata })
+					let newpersondata = personData.sports
+					newpersondata[index].agegroup = event
+					setPersonData({ ...personData, sports: newpersondata })
 				}}
 				defaultValue={personData.age > 16 ? ageoptions[0] : ageoptions[1]}
 			/>
@@ -280,11 +284,11 @@ function TeamTypeInput({
 				classNamePrefix="react-select"
 				options={gametypeoptions}
 				defaultValue={gametypeoptions[0]}
-				value={newpersondata.sports[index].gametype}
+				value={personData.sports[index].gametype}
 				onChange={(event) => {
 					let newpersondata = personData
-					newpersondata.sports[index].gametype = event.target.value
-					setPersonData({ ...personData, newpersondata })
+					newpersondata.sports[index].gametype = event
+					setPersonData({ newpersondata })
 				}}
 			/>
 
@@ -297,9 +301,9 @@ function TeamTypeInput({
 					required
 					value={personData.sports[index].teamname}
 					onChange={(event) => {
-						let newpersondata = personData
-						newpersondata.sports[index].teamname = event.target.value
-						setPersonData({ ...personData, newpersondata })
+						let newpersondata = personData.sports
+						newpersondata[index].teamname = event.target.value
+						setPersonData({ ...personData, sports: newpersondata })
 					}}
 				/>
 				<p className="error">{errorname}</p>

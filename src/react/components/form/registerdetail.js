@@ -224,7 +224,7 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 					setPersonData({ ...personData, sports: newpersondata })
 				}}
 			/>
-			<div id="hiddeninput" className="forminput">
+			<div className="forminput">
 				<label htmlFor="namelast">Team Name</label>
 				<input
 					type="text"
@@ -238,6 +238,7 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 					}}
 					required
 				/>
+
 				<p className="error">{errorname}</p>
 			</div>
 		</div>
@@ -286,9 +287,9 @@ function TeamTypeInput({
 				defaultValue={gametypeoptions[0]}
 				value={personData.sports[index].gametype}
 				onChange={(event) => {
-					let newpersondata = personData
-					newpersondata.sports[index].gametype = event
-					setPersonData({ newpersondata })
+					let newpersondata = personData.sports
+					newpersondata[index].gametype = event
+					setPersonData({ ...personData, newpersondata })
 				}}
 			/>
 

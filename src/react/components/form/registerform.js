@@ -39,74 +39,8 @@ const genderoptions = [
 ]
 
 export default function RegisterPerson({ personData, setPersonData, errors }) {
-	// const validateRegisteration = (data, field) => {
-	// 	const strEmpty = 'Field can not be empty'
-	// 	const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
-	// 	const phoneRegex =
-	// 		/(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/
-
-	// 	switch (field) {
-	// 		case 'firstname':
-	// 			if (!data.firstname) {
-	// 				setErrors({ ...errors, firstname: strEmpty })
-	// 			} else {
-	// 				setErrors({ ...errors, firstname: '' })
-	// 			}
-	// 			break
-	// 		case 'lastname':
-	// 			if (!data.age) {
-	// 				setErrors({ ...errors, lastname: strEmpty })
-	// 			} else {
-	// 				setErrors({ ...errors, lastname: '' })
-	// 			}
-	// 			break
-	// 		case 'gender':
-	// 			if (!data.gender) {
-	// 				setErrors({ ...errors, gender: strEmpty })
-	// 			} else {
-	// 				setErrors({ ...errors, gender: '' })
-	// 			}
-	// 			break
-	// 		case 'socials':
-	// 			if (!data.socials) {
-	// 				setErrors({ ...errors, socials: strEmpty })
-	// 			} else {
-	// 				setErrors({ ...errors, socials: '' })
-	// 			}
-	// 			break
-	// 		case 'sports':
-	// 			if (!data.sports) {
-	// 				setErrors({ ...errors, sports: strEmpty })
-	// 			} else {
-	// 				setErrors({ ...errors, sports: '' })
-	// 			}
-	// 			break
-	// 		case 'phone':
-	// 			if (!data.phone) {
-	// 				setErrors({ ...errors, phone: strEmpty })
-	// 				noError = false
-	// 			} else if (phoneRegex.test(data.phone)) {
-	// 				setErrors({ ...errors, phone: 'Invalid phone number' })
-	// 				noError = false
-	// 			} else {
-	// 				setErrors({ ...errors, phone: '' })
-	// 			}
-	// 			break
-	// 		case 'cnic':
-	// 			if (!data.cnic) {
-	// 				setErrors({ ...errors, cnic: strEmpty })
-	// 				noError = false
-	// 			} else if (idRegex.test(data.cnic)) {
-	// 				setErrors({ ...errors, cnic: 'Invalid cnic number' })
-	// 				noError = false
-	// 			} else {
-	// 				setErrors({ ...errors, cnic: '' })
-	// 			}
-	// 			break
-	// 		default:
-	// 			break
-	// 	}
-	// }
+	const [firstdash, setfirstdash] = useState(false)
+	const [seconddash, setseconddash] = useState(false)
 
 	return (
 		<>
@@ -120,11 +54,12 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="namefirst"
 							value={personData.firstname}
 							onChange={(event) => {
-								setPersonData({
-									...personData,
-									firstname: event.target.value,
-								})
-								// validateRegisteration(personData, 'firstname')
+								if (isNaN(event.target.value) === true) {
+									setPersonData({
+										...personData,
+										firstname: event.target.value,
+									})
+								}
 							}}
 							required
 						/>
@@ -138,8 +73,9 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="namelast"
 							value={personData.lastname}
 							onChange={(event) => {
-								setPersonData({ ...personData, lastname: event.target.value })
-								// validateRegisteration(personData, 'lastname')
+								if (isNaN(event.target.value) === true) {
+									setPersonData({ ...personData, lastname: event.target.value })
+								}
 							}}
 							required
 						/>
@@ -157,7 +93,6 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							value={personData.gender}
 							onChange={(value) => {
 								setPersonData({ ...personData, gender: value })
-								// validateRegisteration(personData, 'gender')
 							}}
 						/>
 						<p className="error">{errors.gender}</p>
@@ -170,8 +105,9 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="age"
 							value={personData.age}
 							onChange={(event) => {
-								setPersonData({ ...personData, age: event.target.value })
-								// validateRegisteration(personData, 'age')
+								if (isNaN(event.target.value) === false) {
+									setPersonData({ ...personData, age: event.target.value })
+								}
 							}}
 						/>
 						<p className="error">{errors.age}</p>
@@ -187,8 +123,35 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="cnic"
 							value={personData.cnic}
 							onChange={(event) => {
-								setPersonData({ ...personData, cnic: event.target.value })
-								// validateRegisteration(personData, 'cnic')
+								if (event.target.value.length <= 15) {
+									if (event.target.value.length == 5 && firstdash == false) {
+										setPersonData({
+											...personData,
+											cnic: event.target.value.replace(/\s/g, '') + '-',
+										})
+										setfirstdash(true)
+									} else if (
+										event.target.value.length == 13 &&
+										seconddash == false
+									) {
+										setPersonData({
+											...personData,
+											cnic: event.target.value.replace(/\s/g, '') + '-',
+										})
+										setseconddash(true)
+									} else {
+										setPersonData({
+											...personData,
+											cnic: event.target.value.replace(/\s/g, ''),
+										})
+									}
+									if (event.target.value.length < 5 && firstdash == true) {
+										setfirstdash(false)
+									}
+									if (event.target.value.length < 13 && seconddash == true) {
+										setseconddash(false)
+									}
+								}
 							}}
 						/>
 						<p className="error">{errors.cnic}</p>
@@ -201,8 +164,12 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="phone"
 							value={personData.phone}
 							onChange={(event) => {
-								setPersonData({ ...personData, phone: event.target.value })
-								// validateRegisteration(personData, 'phone')
+								if (event.target.value.length <= 12) {
+									setPersonData({
+										...personData,
+										phone: event.target.value.replace(/\s/g, ''),
+									})
+								}
 							}}
 						/>
 						<p className="error">{errors.phone}</p>
@@ -221,7 +188,6 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							value={personData.socials}
 							onChange={(value) => {
 								setPersonData({ ...personData, socials: value })
-								// validateRegisteration(personData, 'socials')
 							}}
 						/>
 						<p className="error special">{errors.socials}</p>
@@ -241,7 +207,6 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							value={personData.sports}
 							onChange={(selectedOption) => {
 								setPersonData({ ...personData, sports: selectedOption })
-								// validateRegisteration(personData, 'sports')
 							}}
 							isMulti={true}
 						/>

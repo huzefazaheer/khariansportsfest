@@ -215,6 +215,7 @@ function EgamesInput({ errorname, index, setPersonData }) {
 				className="react-select-container"
 				classNamePrefix="react-select"
 				options={egamesoptions}
+				value={newpersondata.sports[index].games}
 				onChange={(event) => {
 					let newpersondata = personData
 					newpersondata.sports[index].games.push(event.target.value)
@@ -265,6 +266,7 @@ function TeamTypeInput({
 				className="react-select-container selectttt"
 				classNamePrefix="react-select"
 				options={ageoptions}
+				value={newpersondata.sports[index].agegroup}
 				onChange={(event) => {
 					let newpersondata = personData
 					newpersondata.sports[index].agegroup = event.target.value
@@ -278,6 +280,12 @@ function TeamTypeInput({
 				classNamePrefix="react-select"
 				options={gametypeoptions}
 				defaultValue={gametypeoptions[0]}
+				value={newpersondata.sports[index].gametype}
+				onChange={(event) => {
+					let newpersondata = personData
+					newpersondata.sports[index].gametype = event.target.value
+					setPersonData({ ...personData, newpersondata })
+				}}
 			/>
 
 			<div className="forminput">

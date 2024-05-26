@@ -162,15 +162,12 @@ function TeamNameInput({
 	let sportdata = personData.sportname
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label className="speciallabel" htmlFor="agegroup">
-				{sportname}
-			</label>
+			<label htmlFor="agegroup">{sportname}</label>
 
 			<Select
 				id="agegroup"
 				className="react-select-container"
 				classNamePrefix="react-select"
-				defaultValue={personData.age > 16 ? ageoptions[0] : ageoptions[1]}
 				options={ageoptions}
 				onChange={(event) => {
 					let newpersondata = personData.sports
@@ -178,7 +175,7 @@ function TeamNameInput({
 					setPersonData({ ...personData, sports: newpersondata })
 				}}
 			/>
-			<div className="forminput">
+			<div className="forminput detailform">
 				<label htmlFor="teamname">Team Name</label>
 				<input
 					type="text"
@@ -192,8 +189,8 @@ function TeamNameInput({
 					}}
 					required
 				/>
-				<p className="error">{errorname}</p>
 			</div>
+			<p className="error">{errorname}</p>
 		</div>
 	)
 }
@@ -207,9 +204,7 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label className="speciallabel" htmlFor="socialsincluded">
-				Egames
-			</label>
+			<label htmlFor="socialsincluded">Egames</label>
 
 			<Select
 				id="socialsincluded"
@@ -224,12 +219,12 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 					setPersonData({ ...personData, sports: newpersondata })
 				}}
 			/>
-			<div className="forminput">
-				<label htmlFor="namelast">Team Name</label>
+			<div className="forminput detailform">
+				<label htmlFor="teamname">Team Name</label>
 				<input
 					type="text"
-					name="lastname"
-					id="namelast"
+					name="teamname"
+					id="teamname"
 					value={personData.sports[index].teamname}
 					onChange={(event) => {
 						let newpersondata = personData.sports
@@ -238,9 +233,8 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 					}}
 					required
 				/>
-
-				<p className="error">{errorname}</p>
 			</div>
+			<p className="error">{errorname}</p>
 		</div>
 	)
 }
@@ -263,12 +257,10 @@ function TeamTypeInput({
 	}
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label className="speciallabel" htmlFor="gametype">
-				{sportname}
-			</label>
+			<label htmlFor="gametype">{sportname}</label>
 			<Select
 				id="agegroup"
-				className="react-select-container selectttt"
+				className="react-select-container"
 				classNamePrefix="react-select"
 				options={ageoptions}
 				value={personData.sports[index].agegroup}
@@ -277,14 +269,12 @@ function TeamTypeInput({
 					newpersondata[index].agegroup = event
 					setPersonData({ ...personData, sports: newpersondata })
 				}}
-				defaultValue={personData.age > 16 ? ageoptions[0] : ageoptions[1]}
 			/>
 			<Select
 				id="gametype"
 				className="react-select-container"
 				classNamePrefix="react-select"
 				options={gametypeoptions}
-				defaultValue={gametypeoptions[0]}
 				value={personData.sports[index].gametype}
 				onChange={(event) => {
 					let newpersondata = personData.sports
@@ -293,7 +283,7 @@ function TeamTypeInput({
 				}}
 			/>
 
-			<div className="forminput">
+			<div className="forminput detailform">
 				<label htmlFor="teamname">Team Name</label>
 				<input
 					type="text"
@@ -307,8 +297,8 @@ function TeamTypeInput({
 						setPersonData({ ...personData, sports: newpersondata })
 					}}
 				/>
-				<p className="error">{errorname}</p>
 			</div>
+			<p className="error">{errorname}</p>
 		</div>
 	)
 }

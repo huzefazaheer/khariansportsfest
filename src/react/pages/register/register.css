@@ -66,8 +66,23 @@ h4 {
 }
 
 .detailcontainer {
-	grid-template-rows: 1fr 3fr;
 	row-gap: 1rem;
+	padding: 0 20vw;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr !important;
+	align-items: center;
+	row-gap: 4vh;
+}
+
+#teamname {
+	flex-basis: 38rem;
+}
+
+.detailform {
+	display: flex !important;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 }
 
 h5 {
@@ -80,11 +95,6 @@ h5 {
 #formtitles {
 	margin-top: 16vh;
 	font-family: Futura;
-}
-
-.selectttt {
-	height: 38px;
-	margin-top: 2.25rem;
 }
 
 #hiddeninput {
@@ -132,6 +142,15 @@ h5 {
 		margin-top: 8vh;
 	}
 
+	.detailcontainer {
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.detailform {
+		display: grid !important;
+	}
+
 	.formcontainer {
 		padding-top: 2vh;
 		margin: 0 2rem;
@@ -143,7 +162,8 @@ h5 {
 
 	.forminput {
 		justify-content: center;
-		margin-top: 4vh;
+		margin-top: 0.5vh;
+		row-gap: 0.8vh;
 	}
 
 	.forminput:first-child {

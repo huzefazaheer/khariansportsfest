@@ -3,14 +3,26 @@ import { useState } from 'react'
 import Select from 'react-select'
 
 const options = [
-	{ value: 'football', label: 'Football' },
-	{ value: 'basketball', label: 'Basketball' },
-	{ value: 'cricket', label: 'Cricket' },
+	{ value: 'football', label: 'Football', agegroup: '', teamname: '' },
+	{ value: 'basketball', label: 'Basketball', agegroup: '', teamname: '' },
+	{
+		value: 'cricket',
+		label: 'Cricket',
+		agegroup: '',
+		teamname: '',
+		gametype: '',
+	},
 	{ value: 'tabletennis', label: 'Table Tennis' },
-	{ value: 'badminton', label: 'Badminton' },
-	{ value: 'volleyball', label: 'Volleyball' },
+	{
+		value: 'badminton',
+		label: 'Badminton',
+		agegroup: '',
+		teamname: '',
+		gametype: '',
+	},
+	{ value: 'volleyball', label: 'Volleyball', agegroup: '', teamname: '' },
 	{ value: 'snooker', label: 'Snooker' },
-	{ value: 'egames', label: 'E-games' },
+	{ value: 'egames', label: 'E-games', games: [] },
 	{ value: 'chess', label: 'Chess' },
 	{ value: 'ludo', label: 'Ludo' },
 	{ value: 'eatingchallenge', label: 'Khao' },
@@ -26,21 +38,7 @@ const genderoptions = [
 	{ value: 'f', label: 'Female' },
 ]
 
-export default function RegisterPerson({
-	personData,
-	setPersonData,
-	errors,
-	setErrors,
-}) {
-	function setSportsDetail(sports) {
-		switch (sports) {
-			case 'tabletennis':
-				return <sportDetails sport="tabletennis" agegroup="old" type="snigle" />
-				s
-			default:
-				break
-		}
-	}
+export default function RegisterPerson({ personData, setPersonData, errors }) {
 	// const validateRegisteration = (data, field) => {
 	// 	const strEmpty = 'Field can not be empty'
 	// 	const idRegex = /(\d{5}-)(\d{7}-)(\d{1})/
@@ -113,7 +111,6 @@ export default function RegisterPerson({
 	return (
 		<>
 			<div className="formcontainer">
-				{/* <form method="post" action="#"> */}
 				<div className="inputcontainer">
 					<div className="forminput">
 						<label htmlFor="namefirst">First Name</label>
@@ -245,7 +242,6 @@ export default function RegisterPerson({
 							onChange={(selectedOption) => {
 								setPersonData({ ...personData, sports: selectedOption })
 								// validateRegisteration(personData, 'sports')
-								setSportsDetail('tabletennis')
 							}}
 							isMulti={true}
 						/>
@@ -253,20 +249,7 @@ export default function RegisterPerson({
 						<p className="error special">{errors.sports}</p>
 					</div>
 				</div>
-				{/* </form> */}
 			</div>
-		</>
-	)
-}
-
-function sportDetails({ sport, type, agegroup }) {
-	return (
-		<>
-			<ul>
-				<li>sport</li>
-				<li>type</li>
-				<li>agegroup</li>
-			</ul>
 		</>
 	)
 }

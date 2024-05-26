@@ -1,16 +1,17 @@
 import './register.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { doc, getFirestore, setDoc } from 'firebase/firestore'
 import { getDatabase, push, ref } from 'firebase/database'
 
 import RegisterPerson from '../../components/form/registerform'
+import RegisterDetail from '../../components/form/registerdetail'
 import OrderSummary from '../../components/form/ordersummary'
 
 export default function Register() {
-	function writeUserData(person) {
+	async function writeUserData(person) {
 		const db = getDatabase()
-
+		const firestoredb = getFirestore()
 		let sportslist = []
 		for (let i = 0; i < personData.sports.length; i++) {
 			sportslist.push(personData.sports[i].value)
@@ -24,6 +25,15 @@ export default function Register() {
 			socials: person.socials.value,
 			games: sportslist,
 		})
+
+		// setDoc(doc(firestoredb, 'participants', person.cnic), {
+		// 	name: person.firstname + ' ' + person.lastname,
+		// 	gender: person.gender.value,
+		// 	age: person.age,
+		// 	phone: person.phone,
+		// 	socials: person.socials.value,
+		// 	games: sportslist,
+		// })
 	}
 
 	const validateRegisteration = (data) => {
@@ -112,6 +122,37 @@ export default function Register() {
 		return noError
 	}
 
+	const validateDetail = (data) => {
+		const strEmpty = 'Field can not be empty'
+		let sportslist = []
+		for (let i = 0; i < data.sports.length; i++) {
+			sportslist.push[data.sports.value]
+		}
+		let noError = true
+		let _error = {
+			badminton: '',
+			tabletennis: '',
+			football: '',
+			volleyball: '',
+			basketball: '',
+			cricket: '',
+			egames: '',
+		}
+
+		if (sportslist.includes('football')) {
+			if ((data.football.teamname = '')) {
+				_error.football = strEmpty
+				noError = false
+			} else {
+				_error.firstname = ''
+			}
+		}
+
+		setErrors(_error)
+
+		return noError
+	}
+
 	const [errors, setErrors] = useState({
 		firstname: '',
 		lastname: '',
@@ -121,6 +162,15 @@ export default function Register() {
 		phone: '',
 		socials: '',
 		sports: '',
+	})
+	const [errors2, setErrors2] = useState({
+		badminton: '',
+		tabletennis: '',
+		football: '',
+		volleyball: '',
+		basketball: '',
+		cricket: '',
+		egames: '',
 	})
 	const navigate = useNavigate()
 	const [page, setpage] = useState(0)
@@ -138,6 +188,7 @@ export default function Register() {
 	const formtitles = [
 		'',
 		'Enter your details',
+		'Tell us more about ' + personData.firstname,
 		'Order Summary',
 		'Purchase Confirmed',
 	]
@@ -148,6 +199,12 @@ export default function Register() {
 			setPersonData={setPersonData}
 			errors={errors}
 			setErrors={setErrors}
+		/>,
+		<RegisterDetail
+			personData={personData}
+			setPersonData={setPersonData}
+			errors={errors2}
+			seterrors={setErrors2}
 		/>,
 		<OrderSummary personData={personData} setPersonData={setPersonData} />,
 		<RegisterEnd />,
@@ -166,7 +223,7 @@ export default function Register() {
 						<button
 							disabled={page == 0}
 							class="button-light"
-							id={page == 0 || page == 3 ? 'disabled' : ''}
+							id={page == 0 || page == 4 ? 'disabled' : ''}
 							onClick={(e) => {
 								e.preventDefault()
 								setpage((currpage) => currpage - 1)
@@ -176,30 +233,34 @@ export default function Register() {
 						</button>
 						<button
 							class="button-dark"
-							id={page == 0 || page == 3 ? 'onlybutton' : ''}
+							id={page == 0 || page == 4 ? 'onlybutton' : ''}
 							onClick={(e) => {
 								e.preventDefault()
 								if (page == 1) {
 									//validate form
 									if (validateRegisteration(personData)) {
 										console.log('Valid response')
+										console.log(JSON.stringify(personData))
 										setpage((currpage) => currpage + 1)
 									} else {
 										console.log('Invalid response')
 									}
 								} else if (page == 2) {
-									// implement handing this data to database
+									// validate detail form
+									console.log(JSON.stringify(personData))
+									setpage((currpage) => currpage + 1)
+								} else if (page == 3) {
 									console.log(JSON.stringify(personData))
 									writeUserData(personData)
 									setpage((currpage) => currpage + 1)
-								} else if (page == 3) {
+								} else if (page == 4) {
 									navigate('/')
 								} else {
 									setpage((currpage) => currpage + 1)
 								}
 							}}
 						>
-							{page == 2 ? 'Confirm Order' : page == 3 ? 'Go Back' : 'Next'}
+							{page == 3 ? 'Confirm Order' : page == 4 ? 'Go Back' : 'Next'}
 						</button>
 					</div>
 				</form>

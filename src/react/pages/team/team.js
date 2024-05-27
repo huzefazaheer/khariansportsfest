@@ -22,21 +22,21 @@ export default function Team() {
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fdirector_ahsanraza.jpeg?alt=media&token=2fad0a4e-d8c3-436b-b50e-314c173c791d'
 							}
 							name={'Ahsan Raza'}
-							title={'Director KSF'}
+							title={'Event Head'}
 						/>
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fdirector_hamzaahmednoor.jpeg?alt=media&token=508432f1-5ad2-4f2f-9baa-d673a4f38f9e'
 							}
 							name={'Hamza Ahmed Noor'}
-							title={'Director KSF'}
+							title={'Event Head'}
 						/>
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fdirector_moizakhtar.jpeg?alt=media&token=083170e1-8f4d-42b2-a6c9-f4b9ab256f81'
 							}
 							name={'Moiz Akhtar'}
-							title={'Director KSF'}
+							title={'Event Head'}
 						/>
 						<div style={{ clear: 'both' }} />
 					</div>
@@ -138,21 +138,21 @@ export default function Team() {
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fmedia_ryanjalil.jpeg?alt=media&token=3b24136e-a475-4bf2-b7f2-2edb7fe29649'
 							}
 							name={'Ryyan Jalil'}
-							title={'Director Decor'}
+							title={'Director Media'}
 						/>
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fcomedia_meerab.jpeg?alt=media&token=5e856aa5-f670-44b0-8768-3f24e058c5b9'
 							}
 							name={'Meerab'}
-							title={'Co-Director Decor'}
+							title={'Co-Director Media'}
 						/>
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fmedia_haseebanwar.jpeg?alt=media&token=579dc620-eb88-4d12-86ef-1170987bacbb'
 							}
 							name={'Haseeb Anwar'}
-							title={'Director Decor'}
+							title={'Director Media'}
 						/>
 						<div style={{ clear: 'both' }} />
 					</div>

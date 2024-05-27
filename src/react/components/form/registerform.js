@@ -25,7 +25,6 @@ const options = [
 	{ value: 'egames', label: 'E-games', games: [] },
 	{ value: 'chess', label: 'Chess' },
 	{ value: 'ludo', label: 'Ludo' },
-	{ value: 'eatingchallenge', label: 'Khao' },
 ]
 
 const socialsoptions = [

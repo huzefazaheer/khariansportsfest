@@ -72,7 +72,7 @@ export default function Team() {
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Ffinance_imadamir.jpeg?alt=media&token=9c189f87-c202-43bc-b1f6-7e215d6fbf63'
 							}
-							name={'Imad Amir'}
+							name={'M Imad Amir'}
 							title={'Director Finance'}
 						/>
 						<Personimg
@@ -168,7 +168,7 @@ export default function Team() {
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fcoit_muhammadjawadamir.jpeg?alt=media&token=65b0ca9e-43d7-4579-8fe8-72bd1be7ac73'
 							}
-							name={'Muhammad Jawad Amir'}
+							name={'M Jawad Amir'}
 							title={'Co-Director IT'}
 						/>
 						<div style={{ clear: 'both' }} />

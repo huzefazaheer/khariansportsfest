@@ -54,12 +54,10 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="namefirst"
 							value={personData.firstname}
 							onChange={(event) => {
-								if (isNaN(event.target.value) === true) {
-									setPersonData({
-										...personData,
-										firstname: event.target.value,
-									})
-								}
+								setPersonData({
+									...personData,
+									firstname: event.target.value,
+								})
 							}}
 							required
 						/>
@@ -73,9 +71,7 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="namelast"
 							value={personData.lastname}
 							onChange={(event) => {
-								if (isNaN(event.target.value) === true) {
-									setPersonData({ ...personData, lastname: event.target.value })
-								}
+								setPersonData({ ...personData, lastname: event.target.value })
 							}}
 							required
 						/>
@@ -105,9 +101,7 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 							id="age"
 							value={personData.age}
 							onChange={(event) => {
-								if (isNaN(event.target.value) === false) {
-									setPersonData({ ...personData, age: event.target.value })
-								}
+								setPersonData({ ...personData, age: event.target.value })
 							}}
 						/>
 						<p className="error">{errors.age}</p>

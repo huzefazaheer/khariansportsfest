@@ -39,7 +39,8 @@ export default function Register() {
 			sportslist.push(_game)
 		}
 
-		push(ref(db, 'participants/' + person.cnic), {
+		push(ref(db, 'participants/'), {
+			cnic: person.cnic,
 			name: person.firstname + ' ' + person.lastname,
 			gender: person.gender.value,
 			age: person.age,
@@ -143,7 +144,7 @@ export default function Register() {
 
 		return noError
 	}
-
+	const [gamelist, setgamelist] = useState([])
 	const validateDetail = (data) => {
 		const strEmpty = 'Field can not be empty'
 		const strNoAge = 'Age group can not be empty'
@@ -177,10 +178,7 @@ export default function Register() {
 			if (egamesRef.games.length == 0) {
 				_error.egames = 'You have to select atleast one game'
 				noError = false
-			} else if (
-				!egamesRef.teamname &&
-				Object.entries(personData.sports[index].games).includes('pubg')
-			) {
+			} else if (!egamesRef.teamname && gamelist.includes('pubg')) {
 				_error.egames = strEmpty
 				noError = false
 			} else {
@@ -335,6 +333,8 @@ export default function Register() {
 			setPersonData={setPersonData}
 			errors={errors2}
 			seterrors={setErrors2}
+			gamelist={gamelist}
+			setgamelist={setgamelist}
 		/>,
 		<OrderSummary personData={personData} setPersonData={setPersonData} />,
 		<RegisterEnd />,

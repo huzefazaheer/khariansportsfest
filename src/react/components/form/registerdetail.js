@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import Select from 'react-select'
 
-export default function RegisterDetail({ personData, setPersonData, errors }) {
+export default function RegisterDetail({
+	personData,
+	setPersonData,
+	errors,
+	gamelist,
+	setgamelist,
+}) {
 	let badminton = false
 	let badmintonindex = 0
 	let tabletennis = false
@@ -100,6 +106,8 @@ export default function RegisterDetail({ personData, setPersonData, errors }) {
 						index={egamesindex}
 						personData={personData}
 						setPersonData={setPersonData}
+						gamelist={gamelist}
+						setgamelist={setgamelist}
 					/>
 				) : (
 					''
@@ -198,13 +206,19 @@ function TeamNameInput({
 	)
 }
 
-function EgamesInput({ errorname, index, setPersonData, personData }) {
+function EgamesInput({
+	errorname,
+	index,
+	setPersonData,
+	personData,
+	gamelist,
+	setgamelist,
+}) {
 	const egamesoptions = [
 		{ value: 'tekken', label: 'Tekken' },
 		{ value: 'fifa', label: 'FIFA' },
 		{ value: 'pubg', label: 'Pubg' },
 	]
-	const [gamelist, setgamelist] = useState([])
 	return (
 		<div className="inputcontainer detailcontainer">
 			<label htmlFor="socialsincluded">

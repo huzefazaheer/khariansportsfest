@@ -163,7 +163,9 @@ function TeamNameInput({
 	let sportdata = personData.sportname
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label htmlFor="agegroup">{sportname}</label>
+			<label htmlFor="agegroup">
+				<b>{sportname}</b>
+			</label>
 
 			<Select
 				id="agegroup"
@@ -205,7 +207,9 @@ function EgamesInput({ errorname, index, setPersonData, personData }) {
 	const [gamelist, setgamelist] = useState([])
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label htmlFor="socialsincluded">Egames</label>
+			<label htmlFor="socialsincluded">
+				<b>Egames</b>
+			</label>
 
 			<Select
 				id="socialsincluded"
@@ -266,7 +270,9 @@ function TeamTypeInput({
 	}
 	return (
 		<div className="inputcontainer detailcontainer">
-			<label htmlFor="gametype">{sportname}</label>
+			<label htmlFor="gametype">
+				<b>{sportname}</b>
+			</label>
 			<Select
 				id="agegroup"
 				className="react-select-container"

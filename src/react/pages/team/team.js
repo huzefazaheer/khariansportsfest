@@ -16,7 +16,7 @@ export default function Team() {
 							experience for all participants and spectators.
 						</p>
 					</div>
-					<div className="row imgrow">
+					<div className="row imgrow" id="heads">
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fdirector_ahsanraza.jpeg?alt=media&token=2fad0a4e-d8c3-436b-b50e-314c173c791d'
@@ -40,7 +40,7 @@ export default function Team() {
 						/>
 						<div style={{ clear: 'both' }} />
 					</div>
-					<div className="row imgrow imgcenter">
+					<div className="row imgrow imgcenter" id="directorate">
 						<Personimg
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fheaddirectorate_ahmed.jpeg?alt=media&token=64bebf6d-932a-4269-b86e-5c03da39077d'

@@ -14,7 +14,6 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 		if (personData.socials.label == 'Yes') {
 			total = total + 550
 		}
-		console.log(personData.sports[gamesindex].games.length)
 		if (personData.sports.length > 1) {
 			total = total + 500 * (personData.sports.length - 1)
 			if (gamesindex != null) {

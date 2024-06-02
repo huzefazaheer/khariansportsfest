@@ -31,9 +31,6 @@ export default function Footer() {
 								<li>
 									<Link to="/about">About</Link>
 								</li>
-								<li>
-									<Link to="/">The Games</Link>
-								</li>
 							</ul>
 						</div>
 						<div className="footer-content">
@@ -42,13 +39,7 @@ export default function Footer() {
 									<h4>The Team</h4>
 								</li>
 								<li>
-									<Link to="/theteam#heads">Event Directors</Link>
-								</li>
-								<li>
-									<Link to="/theteam#directorate">Directorate</Link>
-								</li>
-								<li>
-									<Link href="/theteam">Game Heads</Link>
+									<Link to="/theteam">Event Directors</Link>
 								</li>
 							</ul>
 						</div>

@@ -1,18 +1,32 @@
-export default function OrderSummary({ personData, setPersonData }) {
+export default function OrderSummary({ personData, setPersonData, setBill }) {
 	let sportslist = ''
+	let gamesindex = null
 	for (let i = 0; i < personData.sports.length; i++) {
 		sportslist = sportslist + personData.sports[i].label + '\n'
+		if (personData.sports[i].value == 'egames') {
+			gamesindex = i
+			console.log(gamesindex)
+		}
 	}
 
 	function calculateTotal() {
-		let total = 2000
-		if (personData.socials.label == 'Yes' && personData.sports.length >= 1) {
-			total = total + 1000
+		let total = 1450
+		if (personData.socials.label == 'Yes') {
+			total = total + 550
 		}
+		console.log(personData.sports[gamesindex].games.length)
 		if (personData.sports.length > 1) {
 			total = total + 500 * (personData.sports.length - 1)
+			if (gamesindex != null) {
+				total = total + 500 * personData.sports[gamesindex].games.length
+			}
+		} else {
+			if (gamesindex != null) {
+				total = total + 500 * (personData.sports[gamesindex].games.length - 1)
+			}
 		}
 
+		setBill(total)
 		return total
 	}
 
@@ -79,7 +93,7 @@ export default function OrderSummary({ personData, setPersonData }) {
 						</td>
 					</tr>
 				</tbody>
-				<h5>Your total is: {calculateTotal()}</h5>
+				<h5>Your total amount is: PKR {calculateTotal()}</h5>
 			</div>
 		</>
 	)

@@ -47,6 +47,7 @@ export default function Register() {
 			phone: person.phone,
 			socials: person.socials.value,
 			games: sportslist,
+			amount: bill,
 		})
 
 		// setDoc(doc(firestoredb, 'participants', person.cnic), {
@@ -110,8 +111,8 @@ export default function Register() {
 		} else {
 			_error.socials = ''
 		}
-		if (Object.keys(data.sports).length === 0 && data.socials.label == 'No') {
-			_error.sports = 'You must choose atleast one sport or socials'
+		if (Object.keys(data.sports).length === 0) {
+			_error.sports = 'You must choose atleast one sport'
 			noError = false
 		} else if (Object.keys(data.sports).length > 3) {
 			_error.sports = 'You can only choose three sports max'
@@ -312,7 +313,7 @@ export default function Register() {
 		socials: '',
 		sports: [],
 	})
-
+	const [bill, setBill] = useState(0)
 	const formtitles = [
 		'',
 		'Enter your details',
@@ -336,7 +337,11 @@ export default function Register() {
 			gamelist={gamelist}
 			setgamelist={setgamelist}
 		/>,
-		<OrderSummary personData={personData} setPersonData={setPersonData} />,
+		<OrderSummary
+			personData={personData}
+			setPersonData={setPersonData}
+			setBill={setBill}
+		/>,
 		<RegisterEnd />,
 	]
 
@@ -419,6 +424,14 @@ function RegisterWelcome() {
 					<li>
 						<p>B Form (if under age)</p>
 					</li>
+					<p>
+						<br />
+						(Early bird discount) Price for one game only is PKR 1450/- and for
+						one game with socials included is PKR 2000/-
+					</p>
+					<p>
+						<em>any additional games cost PKR 500/game</em>
+					</p>
 				</ul>
 
 				{/* <div class="forminput">
@@ -445,14 +458,24 @@ function RegisterEnd() {
 							Account title: Hamza Ahmed Noor Account # 12287901592403 <br />
 							Bank: HBL
 						</p>
+						<p>
+							Please send the screenshot of proof of payment to one of these
+							numbers on whatsapp
+						</p>
+						<ul>
+							<li className="Futura">+92-330-5740212</li>
+							<li className="Futura">+92-347-5368049</li>
+						</ul>
 					</li>
 					<br />
 					<li>
 						<h5>In person</h5>
 						<p>
-							In person payments will be taken on the 27th of May, 6:00 evening,
-							in Kharian Cantt
+							In person payments will be taken on the 29th of May, 6:00 evening,
+							in Lemon Pepper, Kharian Cantt
 						</p>
+						<p>For any queries do not hesitate to contact us</p>
+						<p>+92-327-0766997</p>
 					</li>
 				</ul>
 			</div>

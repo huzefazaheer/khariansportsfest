@@ -17,7 +17,7 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 		if (personData.sports.length > 1) {
 			total = total + 500 * (personData.sports.length - 1)
 			if (gamesindex != null) {
-				total = total + 500 * personData.sports[gamesindex].games.length
+				total = total + 500 * (personData.sports[gamesindex].games.length - 1)
 			}
 		} else {
 			if (gamesindex != null) {

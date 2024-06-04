@@ -164,7 +164,7 @@ function TeamNameInput({
 	index,
 	setPersonData,
 }) {
-	var ageoptions = [{ value: 'above', label: 'Above 16' }]
+	var ageoptions = [{ value: 'above', label: 'Under 25' }]
 	if (personData.age <= 16) {
 		ageoptions.push({ value: 'under', label: 'Under 16' })
 	}
@@ -278,7 +278,7 @@ function TeamTypeInput({
 		{ value: 'one', label: 'Singles' },
 		{ value: 'two', label: 'Doubles' },
 	]
-	var ageoptions = [{ value: 'above', label: 'Above 16' }]
+	let ageoptions = [{ value: 'above', label: 'Under 25' }]
 	if (personData.age <= 16) {
 		ageoptions.push({ value: 'under', label: 'Under 16' })
 	}

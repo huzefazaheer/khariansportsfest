@@ -93,8 +93,8 @@ export default function Register() {
 		} else if (data.age < 6) {
 			_error.age = 'Age can not be less than 6'
 			noError = false
-		} else if (data.age > 50) {
-			_error.age = 'Age can not be more than 50'
+		} else if (data.age > 25) {
+			_error.age = 'Age can not be more than 25'
 			noError = false
 		} else {
 			_error.age = ''

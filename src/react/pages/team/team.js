@@ -79,7 +79,7 @@ export default function Team() {
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fpublicrelations_syedkashan.jpeg?alt=media&token=9e9fb936-87bf-4e59-8b82-4f08902e0076'
 							}
-							name={'Syed Kashan'}
+							name={'Syed Hassan'}
 							title={'Director Public Relations'}
 						/>
 						<Personimg

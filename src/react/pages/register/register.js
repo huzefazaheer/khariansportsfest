@@ -446,6 +446,7 @@ function RegisterWelcome() {
 }
 
 function RegisterEnd() {
+	const date = new Date()
 	return (
 		<>
 			<div className="formcontainer">
@@ -453,28 +454,51 @@ function RegisterEnd() {
 				<p>Below are the ways you can submit your payment</p>
 				<ul>
 					<li>
-						<h5>Online Payment</h5>
-						<p>
-							Account title: Hamza Ahmed Noor Account # 12287901592403 <br />
-							Bank: HBL
-						</p>
-						<p>
-							Please send the screenshot of proof of payment to one of these
-							numbers on whatsapp
-						</p>
+						<h5>Online Payments</h5>
+						<br />
 						<ul>
-							<li className="Futura">+92-330-5740212</li>
-							<li className="Futura">+92-347-5368049</li>
+							<li>
+								<h4>Bank transfer</h4>
+								<p>
+									Account title: Hamza Ahmed Noor Account # 12287901592403{' '}
+									<br />
+									Bank: HBL
+								</p>
+								<p>
+									Please send the screenshot of proof of payment to one of these
+									numbers on whatsapp
+								</p>
+								<br />
+							</li>
+
+							<li>
+								<h4>Easypaisa / Jazzcash</h4>
+								<p>
+									Account title: Syed Hassan Mehdi <br />
+									Account number: 03270766997
+								</p>
+							</li>
+
+							<li>
+								<p>
+									Please send the screenshot of proof of payment to one of these
+									numbers on whatsapp
+								</p>
+								<ul>
+									<li className="futura">+92-330-5740212</li>
+									<li className="futura">+92-347-5368049</li>
+								</ul>
+							</li>
 						</ul>
 					</li>
 					<br />
 					<li>
 						<h5>In person</h5>
 						<p>
-							In person payments will be taken on the 29th of May, 6:00 evening,
-							in Lemon Pepper, Kharian Cantt
+							In person payments will be taken on the 29th of June, 6:00
+							evening, in Lemon Pepper, Kharian Cantt
 						</p>
-						<p>For any queries do not hesitate to contact us</p>
+						<p>For any queries please do not hesitate to contact us</p>
 						<p>+92-327-0766997</p>
 					</li>
 				</ul>

@@ -168,7 +168,7 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 						<p className="error">{errors.phone}</p>
 					</div>
 				</div>
-				<div className="inputcontainer">
+				<div className="inputcontainer specialinput">
 					<label className="speciallabel" htmlFor="socialsincluded">
 						Do you want socials included?
 					</label>
@@ -186,7 +186,7 @@ export default function RegisterPerson({ personData, setPersonData, errors }) {
 						<p className="error special">{errors.socials}</p>
 					</div>
 				</div>
-				<div className="inputcontainer">
+				<div className="inputcontainer specialinput">
 					<label className="speciallabel" for="sports">
 						Choose sports
 					</label>

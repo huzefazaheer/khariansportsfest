@@ -480,10 +480,11 @@ function RegisterEnd() {
 							</li>
 
 							<li>
-								<p>
+								<br />
+								<h4>
 									Please send the screenshot of proof of payment to one of these
 									numbers on whatsapp
-								</p>
+								</h4>
 								<ul>
 									<li className="futura">+92-330-5740212</li>
 									<li className="futura">+92-347-5368049</li>
@@ -495,8 +496,8 @@ function RegisterEnd() {
 					<li>
 						<h5>In person</h5>
 						<p>
-							In person payments will be taken on the 29th of June, 6:00
-							evening, in Lemon Pepper, Kharian Cantt
+							In person payments will be taken on the {date.getDate()}th of
+							June, 6:00 evening, in Lemon Pepper, Kharian Cantt
 						</p>
 						<p>For any queries please do not hesitate to contact us</p>
 						<p>+92-327-0766997</p>

@@ -89,13 +89,6 @@ export default function Team() {
 							name={'Murtaza Abbas'}
 							title={'Director Logistics'}
 						/>
-						<Personimg
-							imgsrc={
-								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fmarketing_kaif.jpeg?alt=media&token=7dcda4c2-be52-43e7-bc52-7ee1b0a3cfa1'
-							}
-							name={'Kaif'}
-							title={'Director Marketing'}
-						/>
 						<div style={{ clear: 'both' }} />
 					</div>
 					<div className="row imgrow imgcenter">
@@ -137,7 +130,7 @@ export default function Team() {
 							imgsrc={
 								'https://firebasestorage.googleapis.com/v0/b/khariansportsfest-fde2f.appspot.com/o/eventmanagers%2Fmedia_ryanjalil.jpeg?alt=media&token=3b24136e-a475-4bf2-b7f2-2edb7fe29649'
 							}
-							name={'Ryyan Jalil'}
+							name={'Ryan Jalil'}
 							title={'Director Media'}
 						/>
 						<Personimg

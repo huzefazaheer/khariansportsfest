@@ -12,7 +12,7 @@ export default function OrderSummary({ personData, setPersonData, setBill }) {
 	function calculateTotal() {
 		let total = 1450
 		if (personData.socials.label == 'Yes') {
-			total = total + 550
+			total = total + 1050
 		}
 		if (personData.sports.length > 1) {
 			total = total + 500 * (personData.sports.length - 1)

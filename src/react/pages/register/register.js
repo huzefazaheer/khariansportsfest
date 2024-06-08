@@ -91,7 +91,7 @@ export default function Register() {
 			_error.age = strEmpty
 			noError = false
 		} else if (data.age < 12) {
-			_error.age = 'Age can not be less than 6'
+			_error.age = 'Age can not be less than 12'
 			noError = false
 		} else if (data.age > 25) {
 			_error.age = 'Age can not be more than 25'
@@ -146,6 +146,40 @@ export default function Register() {
 		return noError
 	}
 	const [gamelist, setgamelist] = useState([])
+	let sportslist = []
+	let _pointers = {
+		badminton: 0,
+		tabletennis: 0,
+		football: 0,
+		volleyball: 0,
+		basketball: 0,
+		cricket: 0,
+		egames: 0,
+	}
+	const [isSkippable, setSkippable] = useState(true)
+	const getSportslists = (data) => {
+		for (let i = 0; i < data.sports.length; i++) {
+			sportslist.push(data.sports[i].value)
+			_pointers[data.sports[i].value] = i
+		}
+	}
+	const checkSkippable = () => {
+		console.log(sportslist)
+		if (
+			sportslist.includes('egames') ||
+			sportslist.includes('badminton') ||
+			sportslist.includes('tabletennis') ||
+			sportslist.includes('football') ||
+			sportslist.includes('cricket') ||
+			sportslist.includes('basketball')
+		) {
+			setSkippable(false)
+			return false
+		} else {
+			setSkippable(true)
+			return true
+		}
+	}
 	const validateDetail = (data) => {
 		const strEmpty = 'Field can not be empty'
 		const strNoAge = 'Age group can not be empty'
@@ -158,20 +192,6 @@ export default function Register() {
 			basketball: '',
 			cricket: '',
 			egames: '',
-		}
-		let _pointers = {
-			badminton: 0,
-			tabletennis: 0,
-			football: 0,
-			volleyball: 0,
-			basketball: 0,
-			cricket: 0,
-			egames: 0,
-		}
-		let sportslist = []
-		for (let i = 0; i < data.sports.length; i++) {
-			sportslist.push(data.sports[i].value)
-			_pointers[data.sports[i].value] = i
 		}
 
 		if (sportslist.includes('egames')) {
@@ -251,19 +271,6 @@ export default function Register() {
 			}
 		}
 
-		if (sportslist.includes('volleyball')) {
-			const volleyballRef = data.sports[_pointers.volleyball]
-			if (!volleyballRef.teamname) {
-				_error.volleyball = strEmpty
-				noError = false
-			} else if (!volleyballRef.agegroup) {
-				_error.volleyball = strNoAge
-				noError = false
-			} else {
-				_error.volleyball = ''
-			}
-		}
-
 		if (sportslist.includes('basketball')) {
 			const basketballRef = data.sports[_pointers.basketball]
 			if (!basketballRef.teamname) {
@@ -314,6 +321,7 @@ export default function Register() {
 		sports: [],
 	})
 	const [bill, setBill] = useState(0)
+
 	const formtitles = [
 		'',
 		'Enter your details',
@@ -336,6 +344,7 @@ export default function Register() {
 			seterrors={setErrors2}
 			gamelist={gamelist}
 			setgamelist={setgamelist}
+			setSkippable={setSkippable}
 		/>,
 		<OrderSummary
 			personData={personData}
@@ -363,8 +372,17 @@ export default function Register() {
 								e.preventDefault()
 								if (page == 2) {
 									setPersonData({ ...personData, sports: [] })
+									setpage((currpage) => currpage - 1)
+								} else if (page == 3) {
+									if (isSkippable) {
+										setpage((currpage) => currpage - 2)
+										setPersonData({ ...personData, sports: [] })
+									} else {
+										setpage((currpage) => currpage - 1)
+									}
+								} else {
+									setpage((currpage) => currpage - 1)
 								}
-								setpage((currpage) => currpage - 1)
 							}}
 						>
 							Back
@@ -379,7 +397,12 @@ export default function Register() {
 									if (validateRegisteration(personData)) {
 										console.log('Valid response')
 										// console.log(JSON.stringify(personData))
-										setpage((currpage) => currpage + 1)
+										getSportslists(personData)
+										if (checkSkippable()) {
+											setpage((currpage) => currpage + 2)
+										} else {
+											setpage((currpage) => currpage + 1)
+										}
 									} else {
 										console.log('Invalid response')
 									}
@@ -426,8 +449,8 @@ function RegisterWelcome() {
 					</li>
 					<p>
 						<br />
-						(Early bird discount) Price for one game only is PKR 1450/- and for
-						one game with socials included is PKR 2000/-
+						Price for one game only is PKR 1450/- and for one game with socials
+						included is PKR 2500/-
 					</p>
 					<p>
 						<em>any additional games cost PKR 500/game</em>
@@ -463,10 +486,6 @@ function RegisterEnd() {
 									Account title: Hamza Ahmed Noor Account # 12287901592403{' '}
 									<br />
 									Bank: HBL
-								</p>
-								<p>
-									Please send the screenshot of proof of payment to one of these
-									numbers on whatsapp
 								</p>
 								<br />
 							</li>

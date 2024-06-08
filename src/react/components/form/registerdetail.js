@@ -7,6 +7,7 @@ export default function RegisterDetail({
 	errors,
 	gamelist,
 	setgamelist,
+	setSkippable,
 }) {
 	let badminton = false
 	let badmintonindex = 0
@@ -14,8 +15,6 @@ export default function RegisterDetail({
 	let tabletennisindex = 0
 	let football = false
 	let footballindex = 0
-	let volleyball = false
-	let volleyballindex = 0
 	let basketball = false
 	let basketballindex = 0
 	let cricket = false
@@ -32,26 +31,27 @@ export default function RegisterDetail({
 				case 'tabletennis':
 					tabletennis = true
 					tabletennisindex = i
+
 					break
 				case 'football':
 					football = true
 					footballindex = i
-					break
-				case 'volleyball':
-					volleyball = true
-					volleyballindex = i
+
 					break
 				case 'basketball':
 					basketball = true
 					basketballindex = i
+
 					break
 				case 'cricket':
 					cricket = true
 					cricketindex = i
+
 					break
 				case 'egames':
 					egames = true
 					egamesindex = i
+
 					break
 				default:
 					break
@@ -133,19 +133,6 @@ export default function RegisterDetail({
 						personData={personData}
 						errorname={errors.tabletennis}
 						index={tabletennisindex}
-						setPersonData={setPersonData}
-					/>
-				) : (
-					''
-				)}
-
-				{volleyball ? (
-					<TeamNameInput
-						sportname={'Volleyball'}
-						sportref={'volleyball'}
-						personData={personData}
-						errorname={errors.volleyball}
-						index={volleyballindex}
 						setPersonData={setPersonData}
 					/>
 				) : (

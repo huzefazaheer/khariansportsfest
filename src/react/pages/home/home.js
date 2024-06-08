@@ -49,7 +49,7 @@ function CallToAction() {
 				<div className="left">
 					<h3 className="futura-lt">Don’t miss it.</h3>
 					<p className="futura date">
-						Last date to register is <span className="date">26/6/2024</span>
+						Last date to register is <span className="date">24/6/2024</span>
 					</p>
 					<Link to="/register" className="button-light">
 						Register Now

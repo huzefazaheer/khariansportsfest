@@ -111,9 +111,21 @@ export default function Register() {
 		} else {
 			_error.socials = ''
 		}
+		let glist = []
+		for (let i = 0; i < data.sports.length; i++) {
+			glist.push(data.sports[i].value)
+		}
 		if (Object.keys(data.sports).length === 0) {
 			_error.sports = 'You must choose atleast one sport'
 			noError = false
+		} else if (data.gender.value == 'f') {
+			if (glist.includes('football')) {
+				_error.sports = 'Football is for boys only'
+				noError = false
+			} else if (glist.includes('cricket')) {
+				_error.sports = 'Cricket is for boys only'
+				noError = false
+			}
 		} else if (Object.keys(data.sports).length > 3) {
 			_error.sports = 'You can only choose three sports max'
 			noError = false

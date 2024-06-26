@@ -34,8 +34,8 @@ export default function NavigationBar() {
 						</Link>
 					</li>
 					<li>
-						<Link to="/" className="futura">
-							Buy Tickets
+						<Link to="/tickets" className="futura">
+							Purchase Tickets
 						</Link>
 					</li>
 					<li>

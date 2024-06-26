@@ -7,6 +7,7 @@ import Register from './pages/register/register'
 import Contact from './pages/contact/contact'
 import Team from './pages/team/team'
 import About from './pages/about/about'
+import Tickets from './pages/tickets/tickets'
 
 export default function App() {
 	return (
@@ -14,11 +15,12 @@ export default function App() {
 			<NavigationBar />
 
 			<Routes>
-				<Route path="" element={<Home />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/special" element={<Register />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/theteam" element={<Team />} />
+				<Route path="/tickets" element={<Tickets />} />
 			</Routes>
 
 			<Footer />

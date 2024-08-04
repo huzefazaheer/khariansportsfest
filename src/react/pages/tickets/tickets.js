@@ -152,13 +152,7 @@ function TicketWelcome() {
 					<li>
 						<p>Standard</p>
 						<br />
-						<p>PKR 2500/-</p>
-					</li>
-					<li>
-						<p>VIP Gold Pass</p>
-						<br />
-						<p>Exclusive seats for our VIP guests (limited seats only)</p>
-						<p>PKR 4800/-</p>
+						<p>PKR 1500/-</p>
 					</li>
 					<p>
 						<br />
@@ -197,7 +191,7 @@ function TicketEnd() {
 							</li>
 
 							<li>
-								<h4>Easypaisa / Jazzcash</h4>
+								<h4>Jazzcash</h4>
 								<p>
 									Account title: Syed Hassan Mehdi <br />
 									Account number: 03270766997

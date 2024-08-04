@@ -16,11 +16,11 @@ export default function App() {
 
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/special" element={<Register />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/about" element={<About />} />
 				<Route path="/theteam" element={<Team />} />
 				<Route path="/tickets" element={<Tickets />} />
+				<Route path="/register" element={<Register />} />
 			</Routes>
 
 			<Footer />

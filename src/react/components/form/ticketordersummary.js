@@ -8,7 +8,7 @@ export default function TicketOrderSummary({
 		if (personData.ticket.value == 'vip') {
 			total = 4200
 		} else {
-			total = 2600
+			total = 1500
 		}
 
 		setBill(total)

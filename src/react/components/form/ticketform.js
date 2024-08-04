@@ -2,10 +2,7 @@ import { useState } from 'react'
 
 import Select from 'react-select'
 
-const options = [
-	{ value: 'vip', label: 'VIP Gold Pass' },
-	{ value: 'normal', label: 'Standard Ticket' },
-]
+const options = [{ value: 'normal', label: 'Standard Ticket' }]
 
 export default function RegisterTicket({ personData, setPersonData, errors }) {
 	return (

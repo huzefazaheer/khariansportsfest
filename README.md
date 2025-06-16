@@ -14,4 +14,4 @@ All page templates should be committed to the public folder.
 
 ---
 
-### [Live Demo](https://www.khariansportsfest.web.app)
+### [Live Demo](https://khariansportsfest.web.app/)
